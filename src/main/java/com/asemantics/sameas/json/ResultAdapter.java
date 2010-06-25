@@ -30,9 +30,10 @@ public class ResultAdapter implements JsonSerializer<Equivalence>,
         Equivalence equivalence = new Equivalence();
 
         try {
-            equivalence.setUri(new URI(json.getAsJsonArray().get(0)
-                    .getAsJsonObject().getAsJsonPrimitive("uri").getAsString()));
-
+            String uriString = json.getAsJsonArray().get(0)
+                    .getAsJsonObject().getAsJsonPrimitive("uri").getAsString();
+            equivalence.setUri(new URI(uriString.substring(1, uriString.length() - 1)));
+            
             equivalence.setAmount(json.getAsJsonArray().get(0)
                     .getAsJsonObject().getAsJsonPrimitive("numDuplicates").getAsInt());
 
