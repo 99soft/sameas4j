@@ -6,7 +6,7 @@ import java.net.URISyntaxException;
 import java.util.LinkedList;
 import java.util.List;
 
-import com.asemantics.sameas.Equivalence;
+import com.asemantics.sameas.core.Equivalence;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;
@@ -15,6 +15,13 @@ import com.google.gson.JsonParseException;
 import com.google.gson.JsonSerializationContext;
 import com.google.gson.JsonSerializer;
 
+/**
+ * Json adapter that given a JsonElement builds a
+ * not null an {@link com.asemantics.sameas.core.Equivalence} instance.
+ *
+ * @author Davide Palmisano (dpalmisano@gmail.com)
+ *
+ */
 public class ResultAdapter implements JsonSerializer<Equivalence>, 
     JsonDeserializer<Equivalence> {
 
@@ -25,33 +32,38 @@ public class ResultAdapter implements JsonSerializer<Equivalence>,
     }
 
     public Equivalence deserialize(JsonElement json, Type type,
-            JsonDeserializationContext context) throws JsonParseException {
-
+                                   JsonDeserializationContext context) throws JsonParseException {
         Equivalence equivalence = new Equivalence();
+        String uriString = json.getAsJsonArray().get(0)
+                .getAsJsonObject().getAsJsonPrimitive("uri").getAsString();
 
+        String uri = null;
         try {
-            String uriString = json.getAsJsonArray().get(0)
-                    .getAsJsonObject().getAsJsonPrimitive("uri").getAsString();
-            equivalence.setUri(new URI(uriString.substring(1, uriString.length() - 1)));
-            
-            equivalence.setAmount(json.getAsJsonArray().get(0)
-                    .getAsJsonObject().getAsJsonPrimitive("numDuplicates").getAsInt());
-
-            JsonArray duplicates = json.getAsJsonArray().get(0)
-            .getAsJsonObject().getAsJsonArray("duplicates");
-
-            List<URI> duplicatesURIs = new LinkedList<URI>();
-
-            for(int i=0; i<duplicates.size(); i++) {
-                URI uri = new URI(duplicates.get(i).getAsString());
-                duplicatesURIs.add(uri);
-                equivalence.setDuplicates(duplicatesURIs);
-            }
-
+            uri = uriString.substring(1, uriString.length() - 1);
+            equivalence.setUri(new URI(uri));
         } catch (URISyntaxException e) {
-            e.printStackTrace();
+            throw new RuntimeException(String.format("URI %s seems to be not well-formed", uri));
         }
 
+        equivalence.setAmount(json.getAsJsonArray().get(0)
+                .getAsJsonObject().getAsJsonPrimitive("numDuplicates").getAsInt());
+
+        JsonArray duplicates = json.getAsJsonArray().get(0)
+                .getAsJsonObject().getAsJsonArray("duplicates");
+
+        List<URI> duplicatesURIs = new LinkedList<URI>();
+
+        for (int i = 0; i < duplicates.size(); i++) {
+            URI equivalentUri;
+            try {
+                equivalentUri = new URI(duplicates.get(i).getAsString());
+                duplicatesURIs.add(equivalentUri);
+            } catch (URISyntaxException e) {
+                // if an equivalent URI is not well-formed it's better to do not add it, let's go on
+                continue;
+            }
+        }
+        equivalence.setDuplicates(duplicatesURIs);
         return equivalence;
     }
 

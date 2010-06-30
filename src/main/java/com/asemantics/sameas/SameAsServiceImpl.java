@@ -2,6 +2,8 @@ package com.asemantics.sameas;
 
 import java.io.IOException;
 import java.net.URI;
+
+import com.asemantics.sameas.core.Equivalence;
 import org.apache.http.HttpVersion;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.methods.HttpGet;
@@ -17,8 +19,13 @@ import org.apache.http.params.HttpProtocolParams;
 import org.apache.http.protocol.HTTP;
 import org.apache.http.util.VersionInfo;
 import com.asemantics.sameas.httphandlers.ResultHandler;
-import com.asemantics.sameas.interfaces.SameAsService;
 
+/**
+ * Default implementation of {@link com.asemantics.sameas.SameAsService}.
+ *
+ * @author Davide Palmisano (dpalmisano@gmail.com)
+ * 
+ */
 public class SameAsServiceImpl implements SameAsService {
 
     private DefaultHttpClient httpclient = null;
@@ -44,7 +51,7 @@ public class SameAsServiceImpl implements SameAsService {
         final String release = (vi != null) ?
             vi.getRelease() : VersionInfo.UNAVAILABLE;
         HttpProtocolParams.setUserAgent(params, 
-                "Apache-HttpClient/" + release + " (java 1.4)");
+                "Apache-HttpClient/" + release + " (java 1.6)");
 
         ThreadSafeClientConnManager connectionManager =
             new ThreadSafeClientConnManager(params, registry);
@@ -53,21 +60,17 @@ public class SameAsServiceImpl implements SameAsService {
     }
 
     public Equivalence getDuplicates(URI uri) throws SameAsServiceException {
-
-        Equivalence equivalence = new Equivalence();
+        Equivalence equivalence;
         HttpGet method = new HttpGet("http://sameas.org/json?" +
                 "uri=" + uri.toString());
-
         try {
             equivalence = httpclient.execute(method, new ResultHandler());
         } catch (ClientProtocolException e) {
-            throw new SameAsServiceException("error calling the SameAs service", e);
+            throw new SameAsServiceException("error calling the http://sameas.org service", e);
         } catch (IOException e) {
-            throw new SameAsServiceException("error calling the SameAs service", e);
+            throw new SameAsServiceException("error calling the http://sameas.org service", e);
         }
-
         return equivalence;
-
     }
 
 }

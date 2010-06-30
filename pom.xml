@@ -2,12 +2,12 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>eu.notube.enrichment.sameas</groupId>
-    <artifactId>stub</artifactId>
+    <groupId>org.sameas</groupId>
+    <artifactId>sameas4j</artifactId>
     <packaging>jar</packaging>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
     <name>sameas-stub</name>
-    <url>http://notube.tv</url>
+    <url>http://sameas.org</url>
 
 <repositories>
 	<!-- Generic repository. -->
@@ -61,7 +61,7 @@
     </dependencies>
 
     <build>
-        <finalName>sameas-stub</finalName>
+        <finalName>sameas4j</finalName>
         <plugins>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -78,9 +78,7 @@
                 <artifactId>maven-deploy-plugin</artifactId>
                 <version>2.5</version>
             </plugin>
-
-
-        </plugins>
+		</plugins>
         <extensions>
             <extension>
                 <groupId>org.jvnet.wagon-svn</groupId>
