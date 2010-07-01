@@ -1,9 +1,9 @@
-package com.asemantics.sameas;
+package com.sameas.sameas;
 
 import java.io.IOException;
 import java.net.URI;
 
-import com.asemantics.sameas.core.Equivalence;
+import com.sameas.sameas.core.Equivalence;
 import org.apache.http.HttpVersion;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.methods.HttpGet;
@@ -18,10 +18,10 @@ import org.apache.http.params.HttpParams;
 import org.apache.http.params.HttpProtocolParams;
 import org.apache.http.protocol.HTTP;
 import org.apache.http.util.VersionInfo;
-import com.asemantics.sameas.httphandlers.ResultHandler;
+import com.sameas.sameas.httphandlers.ResultHandler;
 
 /**
- * Default implementation of {@link com.asemantics.sameas.SameAsService}.
+ * Default implementation of {@link com.sameas.sameas.SameAsService}.
  *
  * @author Davide Palmisano (dpalmisano@gmail.com)
  * 

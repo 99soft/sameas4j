@@ -1,6 +1,6 @@
-package com.asemantics.sameas;
+package com.sameas.sameas;
 
-import com.asemantics.sameas.core.Equivalence;
+import com.sameas.sameas.core.Equivalence;
 
 import java.net.URI;
 

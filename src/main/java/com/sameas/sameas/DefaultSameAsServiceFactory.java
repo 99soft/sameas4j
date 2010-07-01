@@ -1,9 +1,9 @@
-package com.asemantics.sameas;
+package com.sameas.sameas;
 
 /**
- * Default factory class to build a concrete implementation of {@link com.asemantics.sameas.SameAsService}.
+ * Default factory class to build a concrete implementation of {@link com.sameas.sameas.SameAsService}.
  *
- * @see com.asemantics.sameas.SameAsServiceImpl
+ * @see com.sameas.sameas.SameAsServiceImpl
  * @author Davide Palmisano (dpalmisano@gmail.com)
  *
  */

@@ -1,4 +1,4 @@
-package com.asemantics.sameas.core;
+package com.sameas.sameas.core;
 
 import java.net.URI;
 import java.util.ArrayList;

@@ -1,15 +1,15 @@
-package com.asemantics.sameas.core;
+package com.sameas.sameas.core;
 
 import java.net.URI;
 import java.net.URISyntaxException;
 
-import com.asemantics.sameas.DefaultSameAsServiceFactory;
-import com.asemantics.sameas.SameAsServiceException;
-import com.asemantics.sameas.SameAsService;
+import com.sameas.sameas.DefaultSameAsServiceFactory;
+import com.sameas.sameas.SameAsServiceException;
+import com.sameas.sameas.SameAsService;
 import junit.framework.TestCase;
 
 /**
- * Reference test class for {@link com.asemantics.sameas.SameAsServiceImpl}.
+ * Reference test class for {@link com.sameas.sameas.SameAsServiceImpl}.
  *
  * @author Davide Palmisano (dpalmisano@gmail.com)
  *

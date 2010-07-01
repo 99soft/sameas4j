@@ -1,7 +1,7 @@
-package com.asemantics.sameas;
+package com.sameas.sameas;
 
 /**
- * Raised when an error occours within {@link com.asemantics.sameas.SameAsService}.
+ * Raised when an error occours within {@link com.sameas.sameas.SameAsService}.
  *
  * @author Davide Palmisano (dpalmisano@gmail.com)
  *
