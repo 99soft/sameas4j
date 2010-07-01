@@ -1,11 +1,11 @@
-package com.sameas.sameas;
+package com.sameas.sameas4j;
 
-import com.sameas.sameas.core.Equivalence;
+import com.sameas.sameas4j.core.Equivalence;
 
 import java.net.URI;
 
 /**
- * It models the methods that a <a href="http://sameas.org">sameAs.org</a>
+ * It models the methods that a <a href="http://sameas4j.org">sameAs.org</a>
  * client must expose.
  *
  * @author Davide Palmisano (dpalmisano@gmail.com)

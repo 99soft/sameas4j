@@ -1,9 +1,9 @@
-package com.sameas.sameas;
+package com.sameas.sameas4j;
 
 import java.io.IOException;
 import java.net.URI;
 
-import com.sameas.sameas.core.Equivalence;
+import com.sameas.sameas4j.core.Equivalence;
 import org.apache.http.HttpVersion;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.methods.HttpGet;
@@ -18,15 +18,17 @@ import org.apache.http.params.HttpParams;
 import org.apache.http.params.HttpProtocolParams;
 import org.apache.http.protocol.HTTP;
 import org.apache.http.util.VersionInfo;
-import com.sameas.sameas.httphandlers.ResultHandler;
+import com.sameas.sameas4j.httphandlers.ResultHandler;
 
 /**
- * Default implementation of {@link com.sameas.sameas.SameAsService}.
+ * Default implementation of {@link com.sameas.sameas4j.SameAsService}.
  *
  * @author Davide Palmisano (dpalmisano@gmail.com)
  * 
  */
 public class SameAsServiceImpl implements SameAsService {
+
+    private static String SERVICE_URL = "http://sameas.org/json?";
 
     private DefaultHttpClient httpclient = null;
 
@@ -61,14 +63,14 @@ public class SameAsServiceImpl implements SameAsService {
 
     public Equivalence getDuplicates(URI uri) throws SameAsServiceException {
         Equivalence equivalence;
-        HttpGet method = new HttpGet("http://sameas.org/json?" +
+        HttpGet method = new HttpGet(SERVICE_URL +
                 "uri=" + uri.toString());
         try {
             equivalence = httpclient.execute(method, new ResultHandler());
         } catch (ClientProtocolException e) {
-            throw new SameAsServiceException("error calling the http://sameas.org service", e);
+            throw new SameAsServiceException("error calling the http://sameas4j.org service", e);
         } catch (IOException e) {
-            throw new SameAsServiceException("error calling the http://sameas.org service", e);
+            throw new SameAsServiceException("error calling the http://sameas4j.org service", e);
         }
         return equivalence;
     }

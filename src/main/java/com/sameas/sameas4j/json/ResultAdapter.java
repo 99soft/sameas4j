@@ -1,4 +1,4 @@
-package com.sameas.sameas.json;
+package com.sameas.sameas4j.json;
 
 import java.lang.reflect.Type;
 import java.net.URI;
@@ -6,7 +6,7 @@ import java.net.URISyntaxException;
 import java.util.LinkedList;
 import java.util.List;
 
-import com.sameas.sameas.core.Equivalence;
+import com.sameas.sameas4j.core.Equivalence;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;
@@ -17,7 +17,7 @@ import com.google.gson.JsonSerializer;
 
 /**
  * Json adapter that given a JsonElement builds a
- * not null an {@link com.sameas.sameas.core.Equivalence} instance.
+ * not null an {@link com.sameas.sameas4j.core.Equivalence} instance.
  *
  * @author Davide Palmisano (dpalmisano@gmail.com)
  *

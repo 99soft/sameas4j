@@ -1,4 +1,4 @@
-package com.sameas.sameas.core;
+package com.sameas.sameas4j.core;
 
 import java.net.URI;
 import java.util.ArrayList;
@@ -6,7 +6,7 @@ import java.util.List;
 
 /**
  * This class models an equivalence. An equivalence is a response given by
- * <a href="http://sameas.org">sameas.org</a> to a given <code>URI</code> in
+ * <a href="http://sameas4j.org">sameas4j.org</a> to a given <code>URI</code> in
  * terms of other <code>owl:sameAs</code> <code>URI</code>.
  *
  * @author Davide Palmisano (dpalmisano@gmail.com)
