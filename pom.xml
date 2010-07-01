@@ -36,8 +36,8 @@
 	<distributionManagement>
 		<repository>
 	    	<uniqueVersion>false</uniqueVersion>
-	        <id>googlecode</id>
-	        <url>svn:https://asmx-sameas4j.googlecode.com/svn/trunk/repo</url>
+	        <id>sameas-4j-googlecode</id>
+	        <url>svn:https://asmx-sameas4j.googlecode.com/svn/repo</url>
 	    </repository>
 	</distributionManagement>
 
