@@ -1,4 +1,4 @@
-package com.sameas.sameas4j.core;
+package com.sameas.sameas4j;
 
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -6,6 +6,7 @@ import java.net.URISyntaxException;
 import com.sameas.sameas4j.DefaultSameAsServiceFactory;
 import com.sameas.sameas4j.SameAsServiceException;
 import com.sameas.sameas4j.SameAsService;
+import com.sameas.sameas4j.core.Equivalence;
 import junit.framework.TestCase;
 
 /**
