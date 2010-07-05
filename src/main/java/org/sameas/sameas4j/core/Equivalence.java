@@ -46,7 +46,7 @@ public class Equivalence {
 
     @Override
     public String toString() {
-        return String.format("uri: %s, amount: %s, duplicates: [%s]",
+        return String.format("uri: %s, amount: %s, duplicates: %s",
                 this.uri, this.getAmount(), this.duplicates);
     }
 
