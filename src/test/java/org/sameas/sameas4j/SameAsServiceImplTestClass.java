@@ -33,7 +33,7 @@ public class SameAsServiceImplTestClass extends TestCase {
                 .getDuplicates(new URI("http://www.bbc.co.uk/music/" +
                         "artists/e9dfc148-d5f6-425e-b80b-f99ed2bd7c09"));
         assertNotNull(equivalence);
-        assertTrue(equivalence.getAmount() == 10);
+        assertEquals(10, equivalence.getAmount());
     }
 
 }
