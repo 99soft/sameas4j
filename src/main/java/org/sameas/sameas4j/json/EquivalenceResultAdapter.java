@@ -19,7 +19,7 @@ import com.google.gson.JsonParseException;
  * @author Davide Palmisano (dpalmisano@gmail.com)
  * @version $Id$
  */
-public class ResultAdapter implements JsonDeserializer<Equivalence> {
+public class EquivalenceResultAdapter implements JsonDeserializer<Equivalence> {
 
     private static final String URI = "uri";
 

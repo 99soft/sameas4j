@@ -5,7 +5,7 @@ import java.io.InputStreamReader;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ResponseHandler;
 import org.sameas.sameas4j.core.Equivalence;
-import org.sameas.sameas4j.json.ResultAdapter;
+import org.sameas.sameas4j.json.EquivalenceResultAdapter;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -23,7 +23,7 @@ public class ResultHandler implements ResponseHandler<Equivalence> {
 
     public ResultHandler() {
         GsonBuilder gsonBuilder = new GsonBuilder();
-        gsonBuilder.registerTypeAdapter(Equivalence.class, new ResultAdapter());
+        gsonBuilder.registerTypeAdapter(Equivalence.class, new EquivalenceResultAdapter());
         this.gson = gsonBuilder.create();
     }
 
