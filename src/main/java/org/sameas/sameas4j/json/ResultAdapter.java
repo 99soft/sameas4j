@@ -27,8 +27,9 @@ public class ResultAdapter implements JsonDeserializer<Equivalence> {
 
     private static final String EXCEPTION_MESSAGE = "URI '%s' seems to be not well-formed";
 
-    public Equivalence deserialize(JsonElement json, Type type,
-                                   JsonDeserializationContext context) throws JsonParseException {
+    public Equivalence deserialize(JsonElement json,
+            Type type,
+            JsonDeserializationContext context) throws JsonParseException {
         Equivalence equivalence = new Equivalence();
         String uriString = json.getAsJsonArray().get(0)
                 .getAsJsonObject().getAsJsonPrimitive(URI).getAsString();
