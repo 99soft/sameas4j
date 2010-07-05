@@ -1,8 +1,8 @@
-package com.sameas.sameas4j;
-
-import com.sameas.sameas4j.core.Equivalence;
+package org.sameas.sameas4j;
 
 import java.net.URI;
+
+import org.sameas.sameas4j.core.Equivalence;
 
 /**
  * It models the methods that a <a href="http://sameas4j.org">sameAs.org</a>

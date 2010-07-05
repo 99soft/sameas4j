@@ -1,4 +1,4 @@
-package com.sameas.sameas4j.core;
+package org.sameas.sameas4j.core;
 
 import java.net.URI;
 import java.util.ArrayList;

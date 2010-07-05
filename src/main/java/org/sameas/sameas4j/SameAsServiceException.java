@@ -1,7 +1,7 @@
-package com.sameas.sameas4j;
+package org.sameas.sameas4j;
 
 /**
- * Raised when an error occours within {@link com.sameas.sameas4j.SameAsService}.
+ * Raised when an error occours within {@link org.sameas.sameas4j.SameAsService}.
  *
  * @author Davide Palmisano (dpalmisano@gmail.com)
  *

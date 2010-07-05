@@ -1,17 +1,18 @@
-package com.sameas.sameas4j.httphandlers;
+package org.sameas.sameas4j.httphandlers;
 
 import java.io.IOException;
 import java.io.InputStreamReader;
-import com.sameas.sameas4j.core.Equivalence;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ResponseHandler;
-import com.sameas.sameas4j.json.ResultAdapter;
+import org.sameas.sameas4j.core.Equivalence;
+import org.sameas.sameas4j.json.ResultAdapter;
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 /**
  * <code>HTTP handler</code> able to parse the <a href="http://sameas4j.org">sameas4j.org</a>
- * response and build a not null {@link com.sameas.sameas4j.core.Equivalence} instance.
+ * response and build a not null {@link org.sameas.sameas4j.core.Equivalence} instance.
  */
 public class ResultHandler implements ResponseHandler<Equivalence> {
 
