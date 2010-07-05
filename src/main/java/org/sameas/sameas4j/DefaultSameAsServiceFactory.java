@@ -5,6 +5,7 @@ package org.sameas.sameas4j;
  *
  * @see org.sameas.sameas4j.SameAsServiceImpl
  * @author Davide Palmisano (dpalmisano@gmail.com)
+ * @version $Id$
  *
  */
 public class DefaultSameAsServiceFactory {

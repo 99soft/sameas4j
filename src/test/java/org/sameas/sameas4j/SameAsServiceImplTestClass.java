@@ -11,7 +11,7 @@ import org.sameas.sameas4j.core.Equivalence;
  * Reference test class for {@link org.sameas.sameas4j.SameAsServiceImpl}.
  *
  * @author Davide Palmisano (dpalmisano@gmail.com)
- *
+ * @version $Id$
  */
 public class SameAsServiceImplTestClass extends TestCase {
 

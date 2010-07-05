@@ -13,6 +13,9 @@ import com.google.gson.GsonBuilder;
 /**
  * <code>HTTP handler</code> able to parse the <a href="http://sameas4j.org">sameas4j.org</a>
  * response and build a not null {@link org.sameas.sameas4j.core.Equivalence} instance.
+ *
+ * @author Davide Palmisano (dpalmisano@gmail.com)
+ * @version $Id$
  */
 public class ResultHandler implements ResponseHandler<Equivalence> {
 

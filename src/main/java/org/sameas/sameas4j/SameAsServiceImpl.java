@@ -24,7 +24,7 @@ import org.sameas.sameas4j.httphandlers.ResultHandler;
  * Default implementation of {@link org.sameas.sameas4j.SameAsService}.
  *
  * @author Davide Palmisano (dpalmisano@gmail.com)
- * 
+ * @version $Id$
  */
 public class SameAsServiceImpl implements SameAsService {
 

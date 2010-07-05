@@ -21,7 +21,7 @@ import com.google.gson.JsonSerializer;
  * not null an {@link org.sameas.sameas4j.core.Equivalence} instance.
  *
  * @author Davide Palmisano (dpalmisano@gmail.com)
- *
+ * @version $Id$
  */
 public class ResultAdapter implements JsonSerializer<Equivalence>, 
     JsonDeserializer<Equivalence> {

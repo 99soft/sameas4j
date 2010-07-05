@@ -10,7 +10,7 @@ import java.util.List;
  * terms of other <code>owl:sameAs</code> <code>URI</code>.
  *
  * @author Davide Palmisano (dpalmisano@gmail.com)
- *
+ * @version $Id$
  */
 public class Equivalence {
 

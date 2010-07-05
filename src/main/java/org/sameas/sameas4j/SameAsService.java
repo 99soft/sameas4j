@@ -9,7 +9,7 @@ import org.sameas.sameas4j.core.Equivalence;
  * client must expose.
  *
  * @author Davide Palmisano (dpalmisano@gmail.com)
- *
+ * @version $Id$
  */
 public interface SameAsService {
 

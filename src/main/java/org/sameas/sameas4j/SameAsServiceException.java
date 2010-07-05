@@ -4,7 +4,7 @@ package org.sameas.sameas4j;
  * Raised when an error occours within {@link org.sameas.sameas4j.SameAsService}.
  *
  * @author Davide Palmisano (dpalmisano@gmail.com)
- *
+ * @version $Id$
  */
 public class SameAsServiceException extends Exception {
 
