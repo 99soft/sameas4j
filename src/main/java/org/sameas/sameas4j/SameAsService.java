@@ -5,7 +5,7 @@ import java.net.URI;
 import org.sameas.sameas4j.core.Equivalence;
 
 /**
- * It models the methods that a <a href="http://sameas4j.org">sameAs.org</a>
+ * It models the methods that a <a href="http://sameas.org">sameas.org</a>
  * client must expose.
  *
  * @author Davide Palmisano (dpalmisano@gmail.com)
