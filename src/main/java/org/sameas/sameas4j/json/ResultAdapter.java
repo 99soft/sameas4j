@@ -3,8 +3,6 @@ package org.sameas.sameas4j.json;
 import java.lang.reflect.Type;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.util.LinkedList;
-import java.util.List;
 
 import org.sameas.sameas4j.core.Equivalence;
 
@@ -23,7 +21,7 @@ import com.google.gson.JsonSerializer;
  * @author Davide Palmisano (dpalmisano@gmail.com)
  * @version $Id$
  */
-public class ResultAdapter implements JsonSerializer<Equivalence>, 
+public class ResultAdapter implements JsonSerializer<Equivalence>,
     JsonDeserializer<Equivalence> {
 
     public JsonElement serialize(Equivalence arg0, Type arg1,
@@ -52,19 +50,18 @@ public class ResultAdapter implements JsonSerializer<Equivalence>,
         JsonArray duplicates = json.getAsJsonArray().get(0)
                 .getAsJsonObject().getAsJsonArray("duplicates");
 
-        List<URI> duplicatesURIs = new LinkedList<URI>();
-
+        int amount = 0;
         for (int i = 0; i < duplicates.size(); i++) {
-            URI equivalentUri;
             try {
-                equivalentUri = new URI(duplicates.get(i).getAsString());
-                duplicatesURIs.add(equivalentUri);
+                equivalence.addDuplicate(new URI(duplicates.get(i).getAsString()));
+                amount++;
             } catch (URISyntaxException e) {
                 // if an equivalent URI is not well-formed it's better to do not add it, let's go on
                 continue;
             }
         }
-        equivalence.setDuplicates(duplicatesURIs);
+        equivalence.setAmount(amount);
+
         return equivalence;
     }
 

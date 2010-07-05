@@ -1,7 +1,6 @@
 package org.sameas.sameas4j.core;
 
 import java.net.URI;
-import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -44,14 +43,6 @@ public class Equivalence {
 
     public Set<URI> getDuplicates() {
         return this.duplicates;
-    }
-
-    public void setDuplicates(Collection<URI> duplicates) {
-        if (!this.duplicates.isEmpty()) {
-            this.duplicates.clear();
-        }
-        this.duplicates.addAll(duplicates);
-        this.amount = this.duplicates.size();
     }
 
     public void addDuplicate(URI uri) {
