@@ -21,11 +21,15 @@ import com.google.gson.JsonParseException;
  */
 public class ResultAdapter implements JsonDeserializer<Equivalence> {
 
+    private static final String URI = "uri";
+
+    private static final String DUPLICATES = "duplicates";
+
     public Equivalence deserialize(JsonElement json, Type type,
                                    JsonDeserializationContext context) throws JsonParseException {
         Equivalence equivalence = new Equivalence();
         String uriString = json.getAsJsonArray().get(0)
-                .getAsJsonObject().getAsJsonPrimitive("uri").getAsString();
+                .getAsJsonObject().getAsJsonPrimitive(URI).getAsString();
 
         String uri = null;
         try {
@@ -39,7 +43,7 @@ public class ResultAdapter implements JsonDeserializer<Equivalence> {
                 .getAsJsonObject().getAsJsonPrimitive("numDuplicates").getAsInt());
 
         JsonArray duplicates = json.getAsJsonArray().get(0)
-                .getAsJsonObject().getAsJsonArray("duplicates");
+                .getAsJsonObject().getAsJsonArray(DUPLICATES);
 
         int amount = 0;
         for (int i = 0; i < duplicates.size(); i++) {
