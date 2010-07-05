@@ -8,9 +8,11 @@ package org.sameas.sameas4j;
  */
 public class SameAsServiceException extends Exception {
 
+    private static final long serialVersionUID = 1L;
+
     public SameAsServiceException(String message) {
         super(message);
-    }    
+    }
 
     public SameAsServiceException(String message, Exception e) {
         super(message, e);
