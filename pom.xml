@@ -341,9 +341,10 @@
             </resource>
 
             <resource>
-                <directory>..</directory>
+                <directory>.</directory>
                 <targetPath>META-INF</targetPath>
                 <includes>
+                    <include>doap.xml</include>
                     <include>LICENSE</include>
                     <include>NOTICE</include>
                 </includes>
