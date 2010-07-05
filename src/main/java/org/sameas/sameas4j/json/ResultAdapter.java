@@ -32,7 +32,7 @@ public class ResultAdapter implements JsonDeserializer<Equivalence> {
             uri = uriString.substring(1, uriString.length() - 1);
             equivalence.setUri(new URI(uri));
         } catch (URISyntaxException e) {
-            throw new RuntimeException(String.format("URI %s seems to be not well-formed", uri));
+            throw new JsonParseException(String.format("URI %s seems to be not well-formed", uri));
         }
 
         equivalence.setAmount(json.getAsJsonArray().get(0)
