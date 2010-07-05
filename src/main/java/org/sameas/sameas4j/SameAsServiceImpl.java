@@ -28,7 +28,7 @@ import org.sameas.sameas4j.httphandlers.ResultHandler;
  */
 public class SameAsServiceImpl implements SameAsService {
 
-    private static String SERVICE_URL = "http://sameas.org/json?";
+    private static final String SERVICE_URL = "http://sameas.org/json?";
 
     private DefaultHttpClient httpclient = null;
 
