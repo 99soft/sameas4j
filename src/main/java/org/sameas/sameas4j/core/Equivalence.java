@@ -13,7 +13,7 @@ import java.util.Set;
  * @author Davide Palmisano (dpalmisano@gmail.com)
  * @version $Id$
  */
-public class Equivalence {
+public final class Equivalence {
 
     private final Set<URI> duplicates = new HashSet<URI>();
 
