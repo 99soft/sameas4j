@@ -16,6 +16,16 @@
                 <companyName>Fondazione Bruno Kessler</companyName>
                 <city>Trento</city>
             </author>
+
+            <author>
+                <name>Simone Tripodi</name>
+                <lastName>Tripodi</lastName>
+                <firstName>Simone</firstName>
+                <initials>ST</initials>
+                <country>Italy</country>
+                <companyName>Sourcesense Srl</companyName>
+                <city>Rome</city>
+            </author>
         </authors>
         <creator>Davide Palmisano</creator>
     </meta>
@@ -40,6 +50,16 @@
                 <country>Italy</country>
                 <companyName>Fondazione Bruno Kessler</companyName>
                 <city>Trento</city>
+            </author>
+
+            <author>
+                <name>Simone Tripodi</name>
+                <lastName>Tripodi</lastName>
+                <firstName>Simone</firstName>
+                <initials>ST</initials>
+                <country>Italy</country>
+                <companyName>Sourcesense Srl</companyName>
+                <city>Rome</city>
             </author>
         </authors>
     </cover>
