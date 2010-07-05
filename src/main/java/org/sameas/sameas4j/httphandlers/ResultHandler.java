@@ -19,7 +19,7 @@ import com.google.gson.GsonBuilder;
  */
 public class ResultHandler implements ResponseHandler<Equivalence> {
 
-    private Gson gson;
+    private final Gson gson;
 
     public ResultHandler() {
         GsonBuilder gsonBuilder = new GsonBuilder();
@@ -29,7 +29,7 @@ public class ResultHandler implements ResponseHandler<Equivalence> {
 
     public Equivalence handleResponse(HttpResponse response)
             throws IOException {
-        return this.gson.fromJson(new InputStreamReader(response.getEntity().getContent()), 
+        return this.gson.fromJson(new InputStreamReader(response.getEntity().getContent()),
                 Equivalence.class);
     }
 
