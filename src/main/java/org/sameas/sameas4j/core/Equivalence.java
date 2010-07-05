@@ -16,8 +16,6 @@ public class Equivalence {
 
     private URI uri;
 
-    private int amount;
-
     private final Set<URI> duplicates = new HashSet<URI>();
 
     public URI getUri() {
@@ -34,11 +32,7 @@ public class Equivalence {
      * @return an integer
      */
     public int getAmount() {
-        return this.amount;
-    }
-
-    public void setAmount(int amount) {
-        this.amount = amount;
+        return this.duplicates.size();
     }
 
     public Set<URI> getDuplicates() {
@@ -52,7 +46,7 @@ public class Equivalence {
     @Override
     public String toString() {
         return String.format("uri: %s, amount: %s, duplicates: [%s]",
-                this.uri, this.amount, this.duplicates);
+                this.uri, this.getAmount(), this.duplicates);
     }
 
     @Override

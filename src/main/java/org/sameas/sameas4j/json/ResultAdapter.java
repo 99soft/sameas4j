@@ -39,23 +39,17 @@ public class ResultAdapter implements JsonDeserializer<Equivalence> {
             throw new JsonParseException(String.format("URI %s seems to be not well-formed", uri));
         }
 
-        equivalence.setAmount(json.getAsJsonArray().get(0)
-                .getAsJsonObject().getAsJsonPrimitive("numDuplicates").getAsInt());
-
         JsonArray duplicates = json.getAsJsonArray().get(0)
                 .getAsJsonObject().getAsJsonArray(DUPLICATES);
 
-        int amount = 0;
         for (int i = 0; i < duplicates.size(); i++) {
             try {
                 equivalence.addDuplicate(new URI(duplicates.get(i).getAsString()));
-                amount++;
             } catch (URISyntaxException e) {
                 // if an equivalent URI is not well-formed it's better to do not add it, let's go on
                 continue;
             }
         }
-        equivalence.setAmount(amount);
 
         return equivalence;
     }
