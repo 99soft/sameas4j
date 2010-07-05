@@ -1,7 +1,6 @@
 package org.sameas.sameas4j;
 
 import java.net.URI;
-import java.net.URISyntaxException;
 
 import junit.framework.TestCase;
 
@@ -27,11 +26,10 @@ public class SameAsServiceImplTestClass extends TestCase {
         this.service = null;
     }
 
-    public void testGetDuplicates() throws URISyntaxException, SameAsServiceException {
+    public void testGetDuplicates() throws SameAsServiceException {
         Equivalence equivalence;
-        equivalence = service
-                .getDuplicates(new URI("http://www.bbc.co.uk/music/" +
-                        "artists/e9dfc148-d5f6-425e-b80b-f99ed2bd7c09"));
+        equivalence = this.service
+                .getDuplicates(URI.create("http://www.bbc.co.uk/music/artists/e9dfc148-d5f6-425e-b80b-f99ed2bd7c09"));
         assertNotNull(equivalence);
         assertEquals(10, equivalence.getAmount());
     }
