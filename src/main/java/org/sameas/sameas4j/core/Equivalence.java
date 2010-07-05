@@ -15,16 +15,16 @@ import java.util.Set;
  */
 public class Equivalence {
 
-    private URI uri;
-
     private final Set<URI> duplicates = new HashSet<URI>();
+
+    private final URI uri;
+
+    public Equivalence(URI uri) {
+        this.uri = uri;
+    }
 
     public URI getUri() {
         return this.uri;
-    }
-
-    public void setUri(URI uri) {
-        this.uri = uri;
     }
 
     /**

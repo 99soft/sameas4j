@@ -30,14 +30,14 @@ public class EquivalenceResultAdapter implements JsonDeserializer<Equivalence> {
     public Equivalence deserialize(JsonElement json,
             Type type,
             JsonDeserializationContext context) throws JsonParseException {
-        Equivalence equivalence = new Equivalence();
+        Equivalence equivalence = null;
         String uriString = json.getAsJsonArray().get(0)
                 .getAsJsonObject().getAsJsonPrimitive(URI).getAsString();
 
         String uri = null;
         try {
             uri = uriString.substring(1, uriString.length() - 1);
-            equivalence.setUri(new URI(uri));
+            equivalence = new Equivalence(new URI(uri));
         } catch (URISyntaxException e) {
             throw new JsonParseException(String.format(EXCEPTION_MESSAGE, uri));
         }
