@@ -11,8 +11,6 @@ import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParseException;
-import com.google.gson.JsonSerializationContext;
-import com.google.gson.JsonSerializer;
 
 /**
  * Json adapter that given a JsonElement builds a
@@ -21,14 +19,7 @@ import com.google.gson.JsonSerializer;
  * @author Davide Palmisano (dpalmisano@gmail.com)
  * @version $Id$
  */
-public class ResultAdapter implements JsonSerializer<Equivalence>,
-    JsonDeserializer<Equivalence> {
-
-    public JsonElement serialize(Equivalence arg0, Type arg1,
-            JsonSerializationContext arg2) {
-        // do nothing
-        return null;
-    }
+public class ResultAdapter implements JsonDeserializer<Equivalence> {
 
     public Equivalence deserialize(JsonElement json, Type type,
                                    JsonDeserializationContext context) throws JsonParseException {
