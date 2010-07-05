@@ -26,8 +26,6 @@
 
         <menu ref="reports"/>
 
-        <menu ref="modules"/>
-
         <menu name="External Links">
             <item name="sameas.org" href="http://sameas.org/"/>
         </menu>
