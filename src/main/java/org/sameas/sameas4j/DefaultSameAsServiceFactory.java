@@ -11,14 +11,30 @@ public class DefaultSameAsServiceFactory {
 
     private final static SameAsService INSTANCE = new SameAsServiceImpl();
 
+    /**
+     * 
+     * @return
+     * @since 1.1
+     */
     public static SameAsService createNew() {
         return new SameAsServiceImpl();
     }
 
+    /**
+     * 
+     * @return
+     * @since 1.1
+     */
     public static SameAsService getSingletonInstance() {
         return INSTANCE;
     }
 
+    /**
+     * 
+     * @param clazz
+     * @return
+     * @deprecated
+     */
     @Deprecated
     public static SameAsService getService(Class<? extends SameAsService> clazz) {
         if(clazz.equals(SameAsService.class))
