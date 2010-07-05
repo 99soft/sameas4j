@@ -6,7 +6,7 @@
     <groupId>org.sameas</groupId>
     <artifactId>sameas4j</artifactId>
     <packaging>jar</packaging>
-    <version>1.0</version>
+    <version>1.1-SNAPSHOT</version>
     <inceptionYear>2009</inceptionYear>
     <name>sameas4j :: sameas stub</name>
     <url>http://sameas.org</url>
