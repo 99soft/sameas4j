@@ -21,7 +21,7 @@
         </menu>
 
         <menu name="Miscellaneous">
-            <item name="PDF Manual" href="${project.name}-${project.version}.pdf"/>
+            <item name="PDF Manual" href="${project.artifactId}-${project.version}.pdf"/>
         </menu>
 
         <menu ref="reports"/>
