@@ -28,7 +28,7 @@ import org.sameas.sameas4j.httphandlers.ResultHandler;
  */
 public class SameAsServiceImpl implements SameAsService {
 
-    private static final String SERVICE_URL = "http://sameas.org/json?";
+    private static final String SERVICE_URL = "http://sameas.org/json?uri=%s";
 
     private DefaultHttpClient httpclient = null;
 
@@ -63,10 +63,9 @@ public class SameAsServiceImpl implements SameAsService {
 
     public Equivalence getDuplicates(URI uri) throws SameAsServiceException {
         Equivalence equivalence;
-        HttpGet method = new HttpGet(SERVICE_URL +
-                "uri=" + uri.toString());
+        HttpGet method = new HttpGet(String.format(SERVICE_URL, uri));
         try {
-            equivalence = httpclient.execute(method, new ResultHandler());
+            equivalence = this.httpclient.execute(method, new ResultHandler());
         } catch (ClientProtocolException e) {
             throw new SameAsServiceException("error calling the http://sameas4j.org service", e);
         } catch (IOException e) {
