@@ -1,10 +1,8 @@
 package org.sameas.sameas4j;
 
-import java.io.IOException;
 import java.net.URI;
 
 import org.apache.http.HttpVersion;
-import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.conn.scheme.PlainSocketFactory;
 import org.apache.http.conn.scheme.Scheme;
@@ -66,10 +64,8 @@ public class SameAsServiceImpl implements SameAsService {
         HttpGet method = new HttpGet(String.format(SERVICE_URL, uri));
         try {
             equivalence = this.httpclient.execute(method, new ResultHandler());
-        } catch (ClientProtocolException e) {
-            throw new SameAsServiceException("error calling the http://sameas4j.org service", e);
-        } catch (IOException e) {
-            throw new SameAsServiceException("error calling the http://sameas4j.org service", e);
+        } catch (Exception e) {
+            throw new SameAsServiceException(String.format("An error occurred while calling '%s' service", method.getURI()), e);
         }
         return equivalence;
     }
