@@ -2,6 +2,7 @@ package org.sameas.sameas4j.httphandlers;
 
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.Reader;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
@@ -12,6 +13,7 @@ import org.sameas.sameas4j.json.EquivalenceResultAdapter;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.JsonParseException;
 
 /**
  * <code>HTTP handler</code> able to parse the <a href="http://sameas4j.org">sameas4j.org</a>
@@ -37,9 +39,18 @@ public class ResultHandler implements ResponseHandler<Equivalence> {
             throw new ClientProtocolException(String.format(STATUS_ERROR,
                     response.getStatusLine()));
         }
-
-        return this.gson.fromJson(new InputStreamReader(response.getEntity().getContent()),
-                Equivalence.class);
+        Reader reader = new InputStreamReader(response.getEntity().getContent());
+        try {
+            return this.gson.fromJson(reader, Equivalence.class);
+        } catch (JsonParseException e) {
+            throw new ClientProtocolException("An error occurred while parsing the JSON response", e);
+        } finally {
+            try {
+                reader.close();
+            } catch (IOException e) {
+                // do nothing
+            }
+        }
     }
 
 }
