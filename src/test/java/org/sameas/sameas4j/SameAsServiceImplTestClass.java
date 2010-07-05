@@ -3,12 +3,9 @@ package org.sameas.sameas4j;
 import java.net.URI;
 import java.net.URISyntaxException;
 
-import org.sameas.sameas4j.DefaultSameAsServiceFactory;
-import org.sameas.sameas4j.SameAsService;
-import org.sameas.sameas4j.SameAsServiceException;
-import org.sameas.sameas4j.core.Equivalence;
-
 import junit.framework.TestCase;
+
+import org.sameas.sameas4j.core.Equivalence;
 
 /**
  * Reference test class for {@link org.sameas.sameas4j.SameAsServiceImpl}.
@@ -22,8 +19,7 @@ public class SameAsServiceImplTestClass extends TestCase {
 
     @Override
     protected void setUp() throws Exception {
-        this.service = DefaultSameAsServiceFactory
-            .getService(SameAsService.class);
+        this.service = DefaultSameAsServiceFactory.getSingletonInstance();
     }
 
     @Override

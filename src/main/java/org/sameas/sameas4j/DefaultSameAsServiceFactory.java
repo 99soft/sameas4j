@@ -9,6 +9,17 @@ package org.sameas.sameas4j;
  */
 public class DefaultSameAsServiceFactory {
 
+    private final static SameAsService INSTANCE = new SameAsServiceImpl();
+
+    public static SameAsService createNew() {
+        return new SameAsServiceImpl();
+    }
+
+    public static SameAsService getSingletonInstance() {
+        return INSTANCE;
+    }
+
+    @Deprecated
     public static SameAsService getService(Class<? extends SameAsService> clazz) {
         if(clazz.equals(SameAsService.class))
             return new SameAsServiceImpl();
