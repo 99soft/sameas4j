@@ -1,8 +1,9 @@
 package org.sameas.sameas4j.core;
 
 import java.net.URI;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * This class models an equivalence. An equivalence is a response given by
@@ -18,7 +19,7 @@ public class Equivalence {
 
     private int amount;
 
-    private List<URI> duplicates = new ArrayList<URI>();
+    private final Set<URI> duplicates = new HashSet<URI>();
 
     public URI getUri() {
         return this.uri;
@@ -41,18 +42,20 @@ public class Equivalence {
         this.amount = amount;
     }
 
-    public List<URI> getDuplicates() {
+    public Set<URI> getDuplicates() {
         return this.duplicates;
     }
 
-    public void setDuplicates(List<URI> duplicates) {
-        this.duplicates = duplicates;
+    public void setDuplicates(Collection<URI> duplicates) {
+        if (!this.duplicates.isEmpty()) {
+            this.duplicates.clear();
+        }
+        this.duplicates.addAll(duplicates);
         this.amount = this.duplicates.size();
     }
 
     public void addDuplicate(URI uri) {
-        if(!this.duplicates.contains(uri))
-            this.duplicates.add(uri);
+        this.duplicates.add(uri);
     }
 
     @Override
