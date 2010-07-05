@@ -2,7 +2,10 @@ package org.sameas.sameas4j.httphandlers;
 
 import java.io.IOException;
 import java.io.InputStreamReader;
+
 import org.apache.http.HttpResponse;
+import org.apache.http.HttpStatus;
+import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.ResponseHandler;
 import org.sameas.sameas4j.core.Equivalence;
 import org.sameas.sameas4j.json.EquivalenceResultAdapter;
@@ -19,6 +22,8 @@ import com.google.gson.GsonBuilder;
  */
 public class ResultHandler implements ResponseHandler<Equivalence> {
 
+    private static final String STATUS_ERROR = "Unexpected status: %s";
+
     private final Gson gson;
 
     public ResultHandler() {
@@ -27,8 +32,12 @@ public class ResultHandler implements ResponseHandler<Equivalence> {
         this.gson = gsonBuilder.create();
     }
 
-    public Equivalence handleResponse(HttpResponse response)
-            throws IOException {
+    public Equivalence handleResponse(HttpResponse response) throws ClientProtocolException, IOException {
+        if (HttpStatus.SC_OK != response.getStatusLine().getStatusCode()) {
+            throw new ClientProtocolException(String.format(STATUS_ERROR,
+                    response.getStatusLine()));
+        }
+
         return this.gson.fromJson(new InputStreamReader(response.getEntity().getContent()),
                 Equivalence.class);
     }
