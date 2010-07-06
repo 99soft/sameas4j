@@ -10,7 +10,7 @@ import junit.framework.TestCase;
  * @author Davide Palmisano (dpalmisano@gmail.com)
  * @version $Id$
  */
-public final class SameAsServiceImplTestClass extends TestCase {
+public final class SameAsServiceImplTestCase extends TestCase {
 
     private SameAsService service = null;
 
