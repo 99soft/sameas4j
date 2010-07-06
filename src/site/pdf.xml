@@ -32,6 +32,7 @@
 
     <toc name="Table of Contents">
         <item name="Introduction" ref="index.html"/>
+        <item name="Using sameas4j" ref="howto.html"/>
     </toc>
 
     <cover>

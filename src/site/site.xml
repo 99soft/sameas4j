@@ -18,6 +18,7 @@
     <body>
         <menu name="${project.name}">
             <item name="Introduction" href="index.html"/>
+            <item name="Using sameas4j" href="howto.html"/>
         </menu>
 
         <menu name="Miscellaneous">
