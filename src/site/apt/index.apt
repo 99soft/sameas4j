@@ -8,4 +8,41 @@
 Introduction
 
   A tiny and lightweight library that allows you to integrate the
-  {{{http://sameas.org}sameas.org}} service in your <Semantic Web> Java applications.
+  {{{http://sameas.org}sameas.org}} service in your <Semantic Web> Java
+  applications.
+
+Before coding
+
+  <sameas4j> is deployed on Maven Central repository, so users have just to add
+  the <sameas4j> dependency in their <<<pom.xml>>>:
+
++--------------------------------------+
+<dependencies>
+    ...
+    <dependency>
+        <groupId>org.sameas</groupId>
+        <artifactId>sameas4j</artifactId>
+        <version>XX.XX</version>
+    </dependency>
+    ...
+</dependencies>
++--------------------------------------+
+
+  alternatively, users can add <sameas4j> dependency in the <dependencyManagement>
+  block:
+
++--------------------------------------+
+    <dependencyManagement>
+        <dependencies>
+            ...
+            <dependency>
+                <groupId>org.sameas</groupId>
+                <artifactId>sameas4j</artifactId>
+                <version>XX.XX</version>
+            </dependency>
+            ...
+        </dependencies>
+    </dependencyManagement>
++--------------------------------------+
+
+  Users are now ready to have fun with it!!!
