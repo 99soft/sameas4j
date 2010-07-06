@@ -4,7 +4,6 @@ import java.net.URI;
 
 import junit.framework.TestCase;
 
-import org.sameas.sameas4j.core.Equivalence;
 
 /**
  * Reference test class for {@link org.sameas.sameas4j.SameAsServiceImpl}.
