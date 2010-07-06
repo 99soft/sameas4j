@@ -1,0 +1,35 @@
+                                    ------
+                                    Using sameas4j
+                                    ------
+                                    sameas4j
+                                    ------
+                                     2010
+
+Using sameas4j
+
+  The <<<org.sameas.sameas4j.SameAsService>>> client is the core application
+  class; to obtain an instance, just use the factory:
+
++--------------------------------------+
+import org.sameas.sameas4j.*;
+
+SameAsService sameAsService = DefaultSameAsServiceFactory.createNew();
++--------------------------------------+
+
+  alternatively, users can access to a singleton instance
+
++--------------------------------------+
+import org.sameas.sameas4j.*;
+
+SameAsService sameAsService = DefaultSameAsServiceFactory.getSingletonInstance();
++--------------------------------------+
+
+  and then call it to retrieve equivalent URIs for a Linked Data resource:
+
++--------------------------------------+
+Equivalence equivalence = sameAsService
+                .getDuplicates(new URI("http://dbpedia.org/resource/Mogwai"));
+System.out.println("Number of equivalent URIs: "
+        + equivalence.getAmount());
+System.out.println("Equivalent URIs: " + equivalence.getDuplicates());
++--------------------------------------+
