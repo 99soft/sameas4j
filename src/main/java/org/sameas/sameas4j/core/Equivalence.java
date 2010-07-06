@@ -36,7 +36,7 @@ public final class Equivalence {
         return this.duplicates.size();
     }
 
-    public Set<URI> getDuplicates() {
+    public Iterable<URI> getDuplicates() {
         return Collections.unmodifiableSet(this.duplicates);
     }
 
