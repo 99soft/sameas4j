@@ -15,7 +15,6 @@ import org.apache.http.params.HttpParams;
 import org.apache.http.params.HttpProtocolParams;
 import org.apache.http.protocol.HTTP;
 import org.apache.http.util.VersionInfo;
-import org.sameas.sameas4j.core.Equivalence;
 import org.sameas.sameas4j.httphandlers.ResultHandler;
 
 /**

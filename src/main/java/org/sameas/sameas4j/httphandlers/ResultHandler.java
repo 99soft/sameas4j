@@ -8,7 +8,7 @@ import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.ResponseHandler;
-import org.sameas.sameas4j.core.Equivalence;
+import org.sameas.sameas4j.Equivalence;
 import org.sameas.sameas4j.json.EquivalenceResultAdapter;
 
 import com.google.gson.Gson;
@@ -17,7 +17,7 @@ import com.google.gson.JsonParseException;
 
 /**
  * <code>HTTP handler</code> able to parse the <a href="http://sameas4j.org">sameas4j.org</a>
- * response and build a not null {@link org.sameas.sameas4j.core.Equivalence} instance.
+ * response and build a not null {@link org.sameas.sameas4j.Equivalence} instance.
  *
  * @author Davide Palmisano (dpalmisano@gmail.com)
  * @version $Id$

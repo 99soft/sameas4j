@@ -1,4 +1,4 @@
-package org.sameas.sameas4j.core;
+package org.sameas.sameas4j;
 
 import java.net.URI;
 import java.util.Collections;
