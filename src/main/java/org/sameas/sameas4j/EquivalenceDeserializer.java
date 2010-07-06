@@ -20,12 +20,24 @@ import com.google.gson.JsonParseException;
  */
 final class EquivalenceDeserializer implements JsonDeserializer<Equivalence> {
 
+    /**
+     * The {@code uri} constant.
+     */
     private static final String URI = "uri";
 
+    /**
+     * The {@code duplicates} constant.
+     */
     private static final String DUPLICATES = "duplicates";
 
+    /**
+     * The error message template constant.
+     */
     private static final String EXCEPTION_MESSAGE = "URI '%s' seems to be not well-formed";
 
+    /**
+     * {@inheritDoc}
+     */
     public Equivalence deserialize(JsonElement json,
             Type type,
             JsonDeserializationContext context) throws JsonParseException {
