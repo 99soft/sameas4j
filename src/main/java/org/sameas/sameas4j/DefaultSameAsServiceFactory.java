@@ -9,15 +9,22 @@ package org.sameas.sameas4j;
  */
 public final class DefaultSameAsServiceFactory {
 
+    /**
+     * The singleton {@link SameAsService} instance.
+     */
     private final static SameAsService INSTANCE = new SameAsServiceImpl();
 
+    /**
+     * Hidden constructor, this class can't be instantiated
+     */
     private DefaultSameAsServiceFactory() {
         // prevents this class instantiation
     }
 
     /**
-     * 
-     * @return
+     * Creates a new {@link SameAsService} instance.
+     *
+     * @return a new {@link SameAsService} instance.
      * @since 1.1
      */
     public static SameAsService createNew() {
@@ -25,8 +32,9 @@ public final class DefaultSameAsServiceFactory {
     }
 
     /**
-     * 
-     * @return
+     * Returns the singleton {@link SameAsService} instance.
+     *
+     * @return the singleton {@link SameAsService} instance.
      * @since 1.1
      */
     public static SameAsService getSingletonInstance() {
@@ -34,9 +42,10 @@ public final class DefaultSameAsServiceFactory {
     }
 
     /**
-     * 
-     * @param clazz
-     * @return
+     * Creates a new {@link SameAsService} instance.
+     *
+     * @param clazz the {@link SameAsService} has to be instantiated.
+     * @return a new {@link SameAsService} instance.
      * @deprecated
      */
     @Deprecated
