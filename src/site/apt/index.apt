@@ -32,17 +32,17 @@ Before coding
   block:
 
 +--------------------------------------+
-    <dependencyManagement>
-        <dependencies>
-            ...
-            <dependency>
-                <groupId>org.sameas</groupId>
-                <artifactId>sameas4j</artifactId>
-                <version>XX.XX</version>
-            </dependency>
-            ...
-        </dependencies>
-    </dependencyManagement>
+<dependencyManagement>
+    <dependencies>
+        ...
+        <dependency>
+            <groupId>org.sameas</groupId>
+            <artifactId>sameas4j</artifactId>
+            <version>XX.XX</version>
+        </dependency>
+        ...
+    </dependencies>
+</dependencyManagement>
 +--------------------------------------+
 
   Users are now ready to have fun with it!!!
