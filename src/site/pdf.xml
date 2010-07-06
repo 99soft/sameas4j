@@ -39,7 +39,7 @@
         <coverSubTitle>v. ${project.version}</coverSubTitle>
         <coverType>User Guide</coverType>
         <projectName>${project.name}</projectName>
-        <author>Davide Palmisano</author>
+        <author>The sameas4j team</author>
         <companyLogo>images/logo.png</companyLogo>
         <authors>
             <author>
