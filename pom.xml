@@ -346,6 +346,7 @@
                 <configuration>
                     <includeReports>false</includeReports>
                     <indentSize>1</indentSize>
+                    <outputDirectory>target/site</outputDirectory>
                 </configuration>
             </plugin>
 
