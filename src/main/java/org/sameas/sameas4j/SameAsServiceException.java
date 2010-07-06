@@ -6,7 +6,7 @@ package org.sameas.sameas4j;
  * @author Davide Palmisano (dpalmisano@gmail.com)
  * @version $Id$
  */
-public class SameAsServiceException extends Exception {
+public final class SameAsServiceException extends Exception {
 
     private static final long serialVersionUID = 1L;
 

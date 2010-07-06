@@ -20,6 +20,6 @@ public interface SameAsService {
      * @return
      * @throws SameAsServiceException
      */
-    public Equivalence getDuplicates(URI uri) throws SameAsServiceException;
+    Equivalence getDuplicates(URI uri) throws SameAsServiceException;
 
 }

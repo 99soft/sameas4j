@@ -40,8 +40,7 @@ public final class Equivalence {
         return Collections.unmodifiableSet(this.duplicates);
     }
 
-    /* TODO this can be made protected moving this class and the adapter on top level */
-    public void addDuplicate(URI uri) {
+    protected void addDuplicate(URI uri) {
         this.duplicates.add(uri);
     }
 

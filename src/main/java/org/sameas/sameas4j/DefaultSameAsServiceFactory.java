@@ -7,9 +7,13 @@ package org.sameas.sameas4j;
  * @author Davide Palmisano (dpalmisano@gmail.com)
  * @version $Id$
  */
-public class DefaultSameAsServiceFactory {
+public final class DefaultSameAsServiceFactory {
 
     private final static SameAsService INSTANCE = new SameAsServiceImpl();
+
+    private DefaultSameAsServiceFactory() {
+        // prevents this class instantiation
+    }
 
     /**
      * 

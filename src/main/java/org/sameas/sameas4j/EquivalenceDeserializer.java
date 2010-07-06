@@ -1,10 +1,9 @@
-package org.sameas.sameas4j.json;
+package org.sameas.sameas4j;
 
 import java.lang.reflect.Type;
 import java.net.URI;
 import java.net.URISyntaxException;
 
-import org.sameas.sameas4j.Equivalence;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonDeserializationContext;
@@ -19,7 +18,7 @@ import com.google.gson.JsonParseException;
  * @author Davide Palmisano (dpalmisano@gmail.com)
  * @version $Id$
  */
-public class EquivalenceResultAdapter implements JsonDeserializer<Equivalence> {
+final class EquivalenceDeserializer implements JsonDeserializer<Equivalence> {
 
     private static final String URI = "uri";
 
