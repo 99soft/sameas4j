@@ -4,14 +4,13 @@ import java.net.URI;
 
 import junit.framework.TestCase;
 
-
 /**
  * Reference test class for {@link org.sameas.sameas4j.SameAsServiceImpl}.
  *
  * @author Davide Palmisano (dpalmisano@gmail.com)
  * @version $Id$
  */
-public class SameAsServiceImplTestClass extends TestCase {
+public final class SameAsServiceImplTestClass extends TestCase {
 
     private SameAsService service = null;
 
