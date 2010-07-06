@@ -27,6 +27,8 @@ SameAsService sameAsService = DefaultSameAsServiceFactory.getSingletonInstance()
   and then call it to retrieve equivalent URIs for a Linked Data resource:
 
 +--------------------------------------+
+import org.sameas.sameas4j.*;
+
 Equivalence equivalence = sameAsService
                 .getDuplicates(new URI("http://dbpedia.org/resource/Mogwai"));
 System.out.println("Number of equivalent URIs: "
