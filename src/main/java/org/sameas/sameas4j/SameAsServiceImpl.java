@@ -19,17 +19,28 @@ import com.google.gson.JsonParseException;
  * @author Davide Palmisano (dpalmisano@gmail.com)
  * @version $Id$
  */
-public class SameAsServiceImpl implements SameAsService {
+final class SameAsServiceImpl implements SameAsService {
 
+    /**
+     * The sameas.org service template constant.
+     */
     private static final String SERVICE_URL = "http://sameas.org/json?uri=%s";
 
+    /**
+     * The GsonBuilder used to create new equivalence JSON parser.
+     */
     private final GsonBuilder gsonBuilder = new GsonBuilder();
 
+    /**
+     * Creates a new {@link org.sameas.sameas4j.SameAsService} instance.
+     */
     public SameAsServiceImpl() {
         this.gsonBuilder.registerTypeAdapter(Equivalence.class, new EquivalenceDeserializer());
-        // this.gson = gsonBuilder.create();
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public Equivalence getDuplicates(URI uri) throws SameAsServiceException {
         Equivalence equivalence = null;
 
