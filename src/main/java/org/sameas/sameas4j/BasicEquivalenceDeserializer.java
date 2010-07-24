@@ -1,25 +1,13 @@
 package org.sameas.sameas4j;
 
+import java.net.URI;
+import java.net.URISyntaxException;
+
 import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParseException;
 
-import java.lang.reflect.Type;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.util.ArrayList;
-import java.util.List;
-
-/**
- * Json adapter that given a JsonElement builds a
- * not null a {@link java.util.List} of {@link Equivalence} instance.
- *
- * @author Davide Palmisano (dpalmisano@gmail.com)
- * @version $Id$
- */
-final class ListEquivalenceDeserializer implements JsonDeserializer<List> {
+final class BasicEquivalenceDeserializer {
 
     /**
      * The {@code uri} constant.
@@ -37,31 +25,13 @@ final class ListEquivalenceDeserializer implements JsonDeserializer<List> {
     private static final String EXCEPTION_MESSAGE = "URI '%s' seems to be not well-formed";
 
     /**
-     * {@inheritDoc}
-     */
-    public List<Equivalence> deserialize(JsonElement json,
-        Type type,
-        JsonDeserializationContext context) throws JsonParseException {
-
-        List<Equivalence> equivalences = new ArrayList<Equivalence>();
-
-        JsonArray jsonArrayOfEquivalences = json.getAsJsonArray();
-        for (int i = 0; i < jsonArrayOfEquivalences.size(); i++) {
-            Equivalence equivalence = getEquivalence(jsonArrayOfEquivalences.get(i));
-            equivalences.add(equivalence);
-        }
-
-        return equivalences;
-    }
-
-    /**
      * Deserialize a single {@link org.sameas.sameas4j.Equivalence}
      * from its Json serialization.
      * 
      * @param json object to be deserialized
      * @return a not null {@link org.sameas.sameas4j.Equivalence} instance
      */
-    private Equivalence getEquivalence(JsonElement json) {
+    public Equivalence getEquivalence(JsonElement json) {
         Equivalence equivalence;
         String uriString = json.getAsJsonObject().getAsJsonPrimitive(URI).getAsString();
 

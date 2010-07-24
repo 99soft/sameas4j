@@ -8,7 +8,6 @@ import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URL;
 import java.net.URLConnection;
-import java.util.List;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -41,8 +40,10 @@ final class SameAsServiceImpl implements SameAsService {
      * Creates a new {@link org.sameas.sameas4j.SameAsService} instance.
      */
     public SameAsServiceImpl() {
-        this.gsonBuilder.registerTypeAdapter(Equivalence.class, new EquivalenceDeserializer());
-        this.gsonBuilder.registerTypeAdapter(List.class, new ListEquivalenceDeserializer());
+        BasicEquivalenceDeserializer basicEquivalenceDeserializer = new BasicEquivalenceDeserializer();
+        this.gsonBuilder.registerTypeAdapter(Equivalence.class, new EquivalenceDeserializer(basicEquivalenceDeserializer));
+        this.gsonBuilder.registerTypeAdapter(EquivalenceList.class,
+                new EquivalenceListDeserializer(basicEquivalenceDeserializer));
     }
 
     /**
@@ -55,8 +56,8 @@ final class SameAsServiceImpl implements SameAsService {
     /**
      * {@inheritDoc}
      */
-    public List<Equivalence> getDuplicates(String keyword) throws SameAsServiceException {
-        return invokeULR(String.format(SERVICE_KEYWORD, keyword), List.class);
+    public EquivalenceList getDuplicates(String keyword) throws SameAsServiceException {
+        return invokeULR(String.format(SERVICE_KEYWORD, keyword), EquivalenceList.class);
     }
 
     /**

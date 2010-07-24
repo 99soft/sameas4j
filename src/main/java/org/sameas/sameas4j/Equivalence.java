@@ -1,8 +1,8 @@
 package org.sameas.sameas4j;
 
 import java.net.URI;
-import java.util.Collections;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Set;
 
 /**
@@ -13,7 +13,7 @@ import java.util.Set;
  * @author Davide Palmisano (dpalmisano@gmail.com)
  * @version $Id$
  */
-public final class Equivalence {
+public final class Equivalence implements Iterable<URI> {
 
     /**
      * The equivalent URIs.
@@ -30,7 +30,7 @@ public final class Equivalence {
      *
      * @param uri the requested URI.
      */
-    public Equivalence(URI uri) {
+    protected Equivalence(URI uri) {
         this.uri = uri;
     }
 
@@ -53,12 +53,11 @@ public final class Equivalence {
     }
 
     /**
-     * Returns the equivalent URIs data structure.
-     *
-     * @return the equivalent URIs data structure.
+     * {@inheritDoc}
      */
-    public Iterable<URI> getDuplicates() {
-        return Collections.unmodifiableSet(this.duplicates);
+    @Override
+    public Iterator<URI> iterator() {
+        return this.duplicates.iterator();
     }
 
     /**
