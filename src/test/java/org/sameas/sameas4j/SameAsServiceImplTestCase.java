@@ -1,6 +1,7 @@
 package org.sameas.sameas4j;
 
 import java.net.URI;
+import java.util.List;
 
 import junit.framework.TestCase;
 
@@ -24,12 +25,19 @@ public final class SameAsServiceImplTestCase extends TestCase {
         this.service = null;
     }
 
-    public void testGetDuplicates() throws SameAsServiceException {
+    public void testGetDuplicatesFromURI() throws SameAsServiceException {
         Equivalence equivalence;
         equivalence = this.service
                 .getDuplicates(URI.create("http://www.bbc.co.uk/music/artists/e9dfc148-d5f6-425e-b80b-f99ed2bd7c09"));
         assertNotNull(equivalence);
         assertEquals(10, equivalence.getAmount());
+    }
+
+    public void testGetDuplicatesFromKeyword() throws SameAsServiceException {
+        List<Equivalence> equivalences;
+        equivalences = this.service
+                .getDuplicates("Bassiano");
+        assertEquals(9, equivalences.size());
     }
 
 }
