@@ -10,19 +10,30 @@ import com.google.gson.JsonParseException;
 
 /**
  * Json adapter that given a JsonElement builds a
- * not null a {@link java.util.List} of {@link Equivalence} instance.
+ * list of {@link Equivalence} instance.
  *
  * @author Davide Palmisano (dpalmisano@gmail.com)
  * @version $Id$
  */
 final class EquivalenceListDeserializer implements JsonDeserializer<EquivalenceList> {
 
+    /**
+     * The basic {@link Equivalence} deserializer.
+     */
     private final BasicEquivalenceDeserializer basicEquivalenceDeserializer;
 
+    /**
+     * Creates a new instance using a basic deserializer.
+     *
+     * @param basicEquivalenceDeserializer the basic deserializer.
+     */
     public EquivalenceListDeserializer(BasicEquivalenceDeserializer basicEquivalenceDeserializer) {
         this.basicEquivalenceDeserializer = basicEquivalenceDeserializer;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public EquivalenceList deserialize(JsonElement json,
             Type type,
