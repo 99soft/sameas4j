@@ -7,7 +7,11 @@
 
 Introduction
 
-  A tiny and lightweight library that allows you to integrate the
+  The Web of Data has many equivalent URIs. 
+  {{{http://sameas.org}sameas.org}} is a service helps you to 
+  find co-references between different data sets.
+
+  SameAs4J is a tiny and lightweight library that allows you to integrate the
   {{{http://sameas.org}sameas.org}} service in your <Semantic Web> Java
   applications.
 

@@ -32,8 +32,8 @@ public final class SameAsServiceImplTestCase extends TestCase {
     }
 
     public void testGetDuplicatesFromKeyword() throws SameAsServiceException {
-        EquivalenceList equivalences = this.service.getDuplicates("Bassiano");
-        assertEquals(9, equivalences.size());
+        EquivalenceList equivalences = this.service.getDuplicates("Rome");
+        assertEquals(10, equivalences.size());
     }
 
 }

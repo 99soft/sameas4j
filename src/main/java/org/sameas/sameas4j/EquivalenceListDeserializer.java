@@ -34,7 +34,6 @@ final class EquivalenceListDeserializer implements JsonDeserializer<EquivalenceL
     /**
      * {@inheritDoc}
      */
-    @Override
     public EquivalenceList deserialize(JsonElement json,
             Type type,
             JsonDeserializationContext context) throws JsonParseException {

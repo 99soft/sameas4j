@@ -35,3 +35,16 @@ System.out.println("Number of equivalent URIs: "
         + equivalence.getAmount());
 System.out.println("Equivalent URIs: " + equivalence.getDuplicates());
 +--------------------------------------+
+
+  If you don't have an exact URI for your resource you could use the
+  {{{http://sameas.org/about.php}co-referenced}} lookup using a keyword:
+
++--------------------------------------+
+import org.sameas.sameas4j.*;
+
+Equivalence equivalence = sameAsService
+                .getDuplicates("Rome");
+for(Equivalence equivalence : equivalences)
+    System.out.println(equivalence.getUri());
++--------------------------------------+
+
