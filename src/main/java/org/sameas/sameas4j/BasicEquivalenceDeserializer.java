@@ -7,6 +7,12 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParseException;
 
+/**
+ * Basic Json adapter that given a JsonElement builds a
+ * not null an {@link Equivalence} instance.
+ *
+ * @version $Id$
+ */
 final class BasicEquivalenceDeserializer {
 
     /**
