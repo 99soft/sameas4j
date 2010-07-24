@@ -33,7 +33,9 @@ Equivalence equivalence = sameAsService
                 .getDuplicates(new URI("http://dbpedia.org/resource/Mogwai"));
 System.out.println("Number of equivalent URIs: "
         + equivalence.getAmount());
-System.out.println("Equivalent URIs: " + equivalence.getDuplicates());
+for (URI uri : equivalence) {
+    System.out.println("Equivalent URI: " + uri);
+}
 +--------------------------------------+
 
   If you don't have an exact URI for your resource you could use the
@@ -42,9 +44,10 @@ System.out.println("Equivalent URIs: " + equivalence.getDuplicates());
 +--------------------------------------+
 import org.sameas.sameas4j.*;
 
-Equivalence equivalence = sameAsService
+EquivalenceList equivalence = sameAsService
                 .getDuplicates("Rome");
-for(Equivalence equivalence : equivalences)
+for (Equivalence equivalence : equivalences) {
     System.out.println(equivalence.getUri());
+}
 +--------------------------------------+
 
