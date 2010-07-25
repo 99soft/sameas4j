@@ -15,21 +15,9 @@ import com.google.gson.JsonParseException;
  * @author Davide Palmisano (dpalmisano@gmail.com)
  * @version $Id$
  */
-final class EquivalenceListDeserializer implements JsonDeserializer<EquivalenceList> {
-
-    /**
-     * The basic {@link Equivalence} deserializer.
-     */
-    private final BasicEquivalenceDeserializer basicEquivalenceDeserializer;
-
-    /**
-     * Creates a new instance using a basic deserializer.
-     *
-     * @param basicEquivalenceDeserializer the basic deserializer.
-     */
-    public EquivalenceListDeserializer(BasicEquivalenceDeserializer basicEquivalenceDeserializer) {
-        this.basicEquivalenceDeserializer = basicEquivalenceDeserializer;
-    }
+final class EquivalenceListDeserializer
+        extends AbstractEquivalenceDeserializer
+        implements JsonDeserializer<EquivalenceList> {
 
     /**
      * {@inheritDoc}
@@ -42,7 +30,7 @@ final class EquivalenceListDeserializer implements JsonDeserializer<EquivalenceL
         JsonArray jsonArrayOfEquivalences = json.getAsJsonArray();
         for (int i = 0; i < jsonArrayOfEquivalences.size(); i++) {
             equivalenceList.addEquivalence(
-                    this.basicEquivalenceDeserializer.getEquivalence(jsonArrayOfEquivalences.get(i)));
+                    this.getEquivalence(jsonArrayOfEquivalences.get(i)));
         }
 
         return equivalenceList;

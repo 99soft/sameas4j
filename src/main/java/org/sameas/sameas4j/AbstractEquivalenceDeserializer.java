@@ -13,7 +13,7 @@ import com.google.gson.JsonParseException;
  *
  * @version $Id$
  */
-final class BasicEquivalenceDeserializer {
+abstract class AbstractEquivalenceDeserializer {
 
     /**
      * The {@code uri} constant.

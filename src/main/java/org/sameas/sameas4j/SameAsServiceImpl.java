@@ -40,10 +40,8 @@ final class SameAsServiceImpl implements SameAsService {
      * Creates a new {@link org.sameas.sameas4j.SameAsService} instance.
      */
     public SameAsServiceImpl() {
-        BasicEquivalenceDeserializer basicEquivalenceDeserializer = new BasicEquivalenceDeserializer();
-        this.gsonBuilder.registerTypeAdapter(Equivalence.class, new EquivalenceDeserializer(basicEquivalenceDeserializer));
-        this.gsonBuilder.registerTypeAdapter(EquivalenceList.class,
-                new EquivalenceListDeserializer(basicEquivalenceDeserializer));
+        this.gsonBuilder.registerTypeAdapter(Equivalence.class, new EquivalenceDeserializer());
+        this.gsonBuilder.registerTypeAdapter(EquivalenceList.class, new EquivalenceListDeserializer());
     }
 
     /**
