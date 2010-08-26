@@ -1,7 +1,5 @@
 package org.sameas.sameas4j.cache;
 
-import java.net.URI;
-
 /**
  * 
  *
@@ -10,11 +8,11 @@ import java.net.URI;
  */
 public final class CacheKey {
 
-    private final URI service;
+    private final String service;
 
     private final long lastModified;
 
-    public CacheKey(URI service, long lastModified) {
+    public CacheKey(String service, long lastModified) {
         if (service == null) {
             throw new IllegalArgumentException("Parameter 'service' must not be null");
         }
@@ -23,7 +21,7 @@ public final class CacheKey {
         this.lastModified = lastModified;
     }
 
-    public URI getService() {
+    public String getService() {
         return this.service;
     }
 
