@@ -14,7 +14,7 @@ public final class CacheKey {
 
     private final long lastModified;
 
-    protected CacheKey(URI service, long lastModified) {
+    public CacheKey(URI service, long lastModified) {
         if (service == null) {
             throw new IllegalArgumentException("Parameter 'service' must not be null");
         }
