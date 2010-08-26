@@ -2,6 +2,7 @@ package org.sameas.sameas4j.cache;
 
 /**
  * 
+ * @since 1.2
  * @version $Id$
  */
 public interface Cache {

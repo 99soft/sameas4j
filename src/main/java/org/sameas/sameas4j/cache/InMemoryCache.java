@@ -5,6 +5,7 @@ import java.util.Map;
 
 /**
  * 
+ * @since 1.2
  * @version $Id$
  */
 public final class InMemoryCache implements Cache {

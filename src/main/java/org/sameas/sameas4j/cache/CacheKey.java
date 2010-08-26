@@ -5,6 +5,7 @@ import java.net.URI;
 /**
  * 
  *
+ * @since 1.2
  * @version $Id$
  */
 public final class CacheKey {
