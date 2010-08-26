@@ -2,6 +2,8 @@ package org.sameas.sameas4j;
 
 import java.net.URI;
 
+import org.sameas.sameas4j.bootstrap.SameAsServiceBuilder;
+
 import junit.framework.TestCase;
 
 /**
@@ -16,7 +18,7 @@ public final class SameAsServiceImplTestCase extends TestCase {
 
     @Override
     protected void setUp() throws Exception {
-        this.service = DefaultSameAsServiceFactory.getSingletonInstance();
+        this.service = new SameAsServiceBuilder().createNew().usingDefaultInMemoryCache();
     }
 
     @Override
