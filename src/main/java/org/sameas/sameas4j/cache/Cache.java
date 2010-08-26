@@ -8,6 +8,6 @@ public interface Cache {
 
     <T> void put(CacheKey cacheKey, T cacheValue);
 
-    <T> T getCachedObject(CacheKey cacheKey);
+    <T> T get(CacheKey cacheKey);
 
 }
