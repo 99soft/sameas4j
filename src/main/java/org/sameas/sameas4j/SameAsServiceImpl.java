@@ -9,6 +9,9 @@ import java.net.URI;
 import java.net.URL;
 import java.net.URLConnection;
 
+import org.sameas.sameas4j.cache.Cache;
+import org.sameas.sameas4j.cache.CacheKey;
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonParseException;
@@ -37,11 +40,23 @@ final class SameAsServiceImpl implements SameAsService {
     private final GsonBuilder gsonBuilder = new GsonBuilder();
 
     /**
+     * 
+     */
+    private Cache cache;
+
+    /**
      * Creates a new {@link org.sameas.sameas4j.SameAsService} instance.
      */
     public SameAsServiceImpl() {
         this.gsonBuilder.registerTypeAdapter(Equivalence.class, new EquivalenceDeserializer());
         this.gsonBuilder.registerTypeAdapter(EquivalenceList.class, new EquivalenceListDeserializer());
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public void setCache(Cache cache) {
+        this.cache = cache;
     }
 
     /**
@@ -81,13 +96,30 @@ final class SameAsServiceImpl implements SameAsService {
         Reader reader = null;
         try {
             connection = url.openConnection();
+            long lastModified = connection.getLastModified();
+
+            if (this.cache != null) {
+                CacheKey cacheKey = new CacheKey(toBeInvoked, lastModified);
+                T cached = this.cache.get(cacheKey, returnType);
+                if (cached != null) {
+                    return cached;
+                }
+            }
+
             if (connection instanceof HttpURLConnection) {
                 ((HttpURLConnection) connection).connect();
             }
 
             reader = new InputStreamReader(connection.getInputStream());
             Gson gson = this.gsonBuilder.create();
-            return gson.fromJson(reader, returnType);
+            T response = gson.fromJson(reader, returnType);
+
+            if (this.cache != null) {
+                CacheKey cacheKey = new CacheKey(toBeInvoked, lastModified);
+                this.cache.put(cacheKey, response);
+            }
+
+            return response;
         } catch (IOException e) {
             throw new SameAsServiceException("An error occurred while invoking the URL '"
                     + toBeInvoked

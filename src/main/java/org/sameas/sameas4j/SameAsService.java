@@ -2,6 +2,8 @@ package org.sameas.sameas4j;
 
 import java.net.URI;
 
+import org.sameas.sameas4j.cache.Cache;
+
 /**
  * It models the methods that a <a href="http://sameas.org">sameas.org</a>
  * client must expose.
@@ -33,5 +35,12 @@ public interface SameAsService {
      * @throws SameAsServiceException if an HTTP or JSON parse error occurs.
      */
     EquivalenceList getDuplicates(String keyword) throws SameAsServiceException;
+
+    /**
+     * 
+     * @param cache
+     * @since 1.2
+     */
+    void setCache(Cache cache);
 
 }
