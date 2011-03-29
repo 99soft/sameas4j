@@ -32,8 +32,9 @@
 
     <body>
         <menu name="${project.name}">
-            <item name="Introduction" href="index.html"/>
-            <item name="Using sameas4j" href="howto.html"/>
+            <item name="Introduction" href="index.html" />
+            <item name="Using sameas4j" href="howto.html" />
+            <item name="Cache" href="cache.html" />
         </menu>
 
         <menu ref="reports"/>

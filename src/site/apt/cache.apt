@@ -1,0 +1,30 @@
+                                    ------
+                                    Cache
+                                    ------
+                                    sameas4j
+                                    ------
+                                     2010
+
+Introduction
+
+  Retrieving and parsing data from <sameas.org> could require more time than expected,
+  so a cache could be helpful to avoid parsing already required URLs and speedup service
+  operations.
+
+The Cache interface
+
+  The <<<org.nnsoft.sameas4j.cache.Cache>>> interface describes the easiest way to
+  store and retrieve objects, given a <<<org.nnsoft.sameas4j.cache.CacheKey>>> instance.
+
+  The <sameas4j> package comes with an easy in-memory based implementation class that simply
+  stores and retrieve objects from a memory based LRU cache.
+
+Plugging the Cache into SameAsService
+
+  Very easy! Once obtained the <<<org.nnsoft.sameas4j.SameAsService>>> instance, just set the
+  <<<org.nnsoft.sameas4j.cache.Cache>>> instance:
+
++--------------------------------------+
+SameAsService service = DefaultSameAsServiceFactory.createNew();
+service.setCache(new InMemoryCache());
++--------------------------------------+
