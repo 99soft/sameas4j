@@ -25,7 +25,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
- * 
+ * An in-memory based {@code Cache} implementation.
  */
 public final class InMemoryCache implements Cache {
 
@@ -62,6 +62,9 @@ public final class InMemoryCache implements Cache {
         }
     };
 
+    /**
+     * {@inheritDoc}
+     */
     public <T> T get(CacheKey cacheKey, Class<T> type) {
         if (cacheKey == null) {
             throw new IllegalArgumentException("Parameter 'cacheKey' must be not null");
@@ -83,6 +86,9 @@ public final class InMemoryCache implements Cache {
         return null;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public <T> void put(CacheKey cacheKey, T cacheValue) {
         if (cacheKey == null) {
             throw new IllegalArgumentException("Parameter 'cacheKey' must be not null");
