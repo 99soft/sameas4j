@@ -5,8 +5,6 @@ import org.nnsoft.sameas4j.SameAsService;
 
 /**
  * 
- * @since 1.2
- * @version $Id$
  */
 public final class SameAsServiceBuilder {
 

@@ -6,8 +6,6 @@ import java.util.List;
 
 /**
  * Represents an {@link Equivalence} list.
- *
- * @version $Id$
  */
 public final class EquivalenceList implements Iterable<Equivalence> {
 

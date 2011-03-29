@@ -9,9 +9,6 @@ import java.util.Set;
  * This class models an equivalence. An equivalence is a response given by
  * <a href="http://sameas.org">sameas.org</a> to a given <code>URI</code> in
  * terms of other <code>owl:sameAs</code> <code>URI</code>.
- *
- * @author Davide Palmisano (dpalmisano@gmail.com)
- * @version $Id$
  */
 public final class Equivalence implements Iterable<URI> {
 

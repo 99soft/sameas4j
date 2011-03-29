@@ -4,8 +4,6 @@ package org.nnsoft.sameas4j;
  * Default factory class to build a concrete implementation of {@link org.nnsoft.sameas4j.SameAsService}.
  *
  * @see org.nnsoft.sameas4j.SameAsServiceImpl
- * @author Davide Palmisano (dpalmisano@gmail.com)
- * @version $Id$
  */
 public final class DefaultSameAsServiceFactory {
 

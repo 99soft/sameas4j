@@ -11,9 +11,6 @@ import com.google.gson.JsonParseException;
 /**
  * Json adapter that given a JsonElement builds a
  * list of {@link Equivalence} instance.
- *
- * @author Davide Palmisano (dpalmisano@gmail.com)
- * @version $Id$
  */
 final class EquivalenceListDeserializer
         extends AbstractEquivalenceDeserializer

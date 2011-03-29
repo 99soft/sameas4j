@@ -2,9 +2,6 @@ package org.nnsoft.sameas4j;
 
 /**
  * Raised when an error occurs within {@link org.nnsoft.sameas4j.SameAsService}.
- *
- * @author Davide Palmisano (dpalmisano@gmail.com)
- * @version $Id$
  */
 public final class SameAsServiceException extends Exception {
 

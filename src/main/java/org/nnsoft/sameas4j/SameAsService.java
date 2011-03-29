@@ -7,9 +7,6 @@ import org.nnsoft.sameas4j.cache.Cache;
 /**
  * It models the methods that a <a href="http://sameas.org">sameas.org</a>
  * client must expose.
- *
- * @author Davide Palmisano (dpalmisano@gmail.com)
- * @version $Id$
  */
 public interface SameAsService {
 

@@ -6,8 +6,6 @@ import org.nnsoft.sameas4j.cache.InMemoryCache;
 
 /**
  * 
- * @since 1.2
- * @version $Id$
  */
 public final class CacheBuilder {
 

@@ -10,9 +10,6 @@ import com.google.gson.JsonParseException;
 /**
  * Json adapter that given a JsonElement builds a
  * not null an {@link org.nnsoft.sameas4j.Equivalence} instance.
- *
- * @author Davide Palmisano (dpalmisano@gmail.com)
- * @version $Id$
  */
 final class EquivalenceDeserializer
         extends AbstractEquivalenceDeserializer

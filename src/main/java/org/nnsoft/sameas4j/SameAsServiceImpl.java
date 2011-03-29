@@ -18,9 +18,6 @@ import com.google.gson.JsonParseException;
 
 /**
  * Default implementation of {@link org.nnsoft.sameas4j.SameAsService}.
- *
- * @author Davide Palmisano (dpalmisano@gmail.com)
- * @version $Id$
  */
 final class SameAsServiceImpl implements SameAsService {
 
