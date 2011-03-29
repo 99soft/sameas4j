@@ -57,7 +57,6 @@ public interface SameAsService {
     /**
      * 
      * @param cache
-     * @since 1.2
      */
     void setCache(Cache cache);
 
