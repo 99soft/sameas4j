@@ -21,6 +21,7 @@
  */
 package org.nnsoft.sameas4j;
 
+import static java.lang.String.format;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.Reader;
@@ -81,14 +82,14 @@ final class SameAsServiceImpl implements SameAsService {
      * {@inheritDoc}
      */
     public Equivalence getDuplicates(URI uri) throws SameAsServiceException {
-        return invokeULR(String.format(SERVICE_URL, uri), Equivalence.class);
+        return invokeULR(format(SERVICE_URL, uri), Equivalence.class);
     }
 
     /**
      * {@inheritDoc}
      */
     public EquivalenceList getDuplicates(String keyword) throws SameAsServiceException {
-        return invokeULR(String.format(SERVICE_KEYWORD, keyword), EquivalenceList.class);
+        return invokeULR(format(SERVICE_KEYWORD, keyword), EquivalenceList.class);
     }
 
     /**
