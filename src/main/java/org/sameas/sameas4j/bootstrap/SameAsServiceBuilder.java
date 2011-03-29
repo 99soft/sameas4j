@@ -1,7 +1,7 @@
 package org.sameas.sameas4j.bootstrap;
 
-import org.sameas.sameas4j.DefaultSameAsServiceFactory;
-import org.sameas.sameas4j.SameAsService;
+import org.nnsoft.sameas4j.DefaultSameAsServiceFactory;
+import org.nnsoft.sameas4j.SameAsService;
 
 /**
  * 

@@ -3,4 +3,4 @@
  *
  * @version $Id$
  */
-package org.sameas.sameas4j;
+package org.nnsoft.sameas4j;

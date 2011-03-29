@@ -1,4 +1,4 @@
-package org.sameas.sameas4j;
+package org.nnsoft.sameas4j;
 
 import java.lang.reflect.Type;
 
@@ -9,7 +9,7 @@ import com.google.gson.JsonParseException;
 
 /**
  * Json adapter that given a JsonElement builds a
- * not null an {@link org.sameas.sameas4j.Equivalence} instance.
+ * not null an {@link org.nnsoft.sameas4j.Equivalence} instance.
  *
  * @author Davide Palmisano (dpalmisano@gmail.com)
  * @version $Id$

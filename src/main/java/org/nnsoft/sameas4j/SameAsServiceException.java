@@ -1,7 +1,7 @@
-package org.sameas.sameas4j;
+package org.nnsoft.sameas4j;
 
 /**
- * Raised when an error occurs within {@link org.sameas.sameas4j.SameAsService}.
+ * Raised when an error occurs within {@link org.nnsoft.sameas4j.SameAsService}.
  *
  * @author Davide Palmisano (dpalmisano@gmail.com)
  * @version $Id$

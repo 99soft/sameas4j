@@ -1,4 +1,4 @@
-package org.sameas.sameas4j;
+package org.nnsoft.sameas4j;
 
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -31,11 +31,11 @@ abstract class AbstractEquivalenceDeserializer {
     private static final String EXCEPTION_MESSAGE = "URI '%s' seems to be not well-formed";
 
     /**
-     * Deserialize a single {@link org.sameas.sameas4j.Equivalence}
+     * Deserialize a single {@link org.nnsoft.sameas4j.Equivalence}
      * from its Json serialization.
      * 
      * @param json object to be deserialized
-     * @return a not null {@link org.sameas.sameas4j.Equivalence} instance
+     * @return a not null {@link org.nnsoft.sameas4j.Equivalence} instance
      */
     public Equivalence getEquivalence(JsonElement json) {
         Equivalence equivalence;

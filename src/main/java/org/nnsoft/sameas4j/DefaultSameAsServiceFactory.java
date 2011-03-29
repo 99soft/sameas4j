@@ -1,9 +1,9 @@
-package org.sameas.sameas4j;
+package org.nnsoft.sameas4j;
 
 /**
- * Default factory class to build a concrete implementation of {@link org.sameas.sameas4j.SameAsService}.
+ * Default factory class to build a concrete implementation of {@link org.nnsoft.sameas4j.SameAsService}.
  *
- * @see org.sameas.sameas4j.SameAsServiceImpl
+ * @see org.nnsoft.sameas4j.SameAsServiceImpl
  * @author Davide Palmisano (dpalmisano@gmail.com)
  * @version $Id$
  */

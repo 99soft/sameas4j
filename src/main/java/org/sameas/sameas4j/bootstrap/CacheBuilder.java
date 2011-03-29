@@ -1,6 +1,6 @@
 package org.sameas.sameas4j.bootstrap;
 
-import org.sameas.sameas4j.SameAsService;
+import org.nnsoft.sameas4j.SameAsService;
 import org.sameas.sameas4j.cache.Cache;
 import org.sameas.sameas4j.cache.InMemoryCache;
 

@@ -1,13 +1,17 @@
-package org.sameas.sameas4j;
+package org.nnsoft.sameas4j;
 
 import java.net.URI;
 
+import org.nnsoft.sameas4j.Equivalence;
+import org.nnsoft.sameas4j.EquivalenceList;
+import org.nnsoft.sameas4j.SameAsService;
+import org.nnsoft.sameas4j.SameAsServiceException;
 import org.sameas.sameas4j.bootstrap.SameAsServiceBuilder;
 
 import junit.framework.TestCase;
 
 /**
- * Reference test class for {@link org.sameas.sameas4j.SameAsServiceImpl}.
+ * Reference test class for {@link org.nnsoft.sameas4j.SameAsServiceImpl}.
  *
  * @author Davide Palmisano (dpalmisano@gmail.com)
  * @version $Id$

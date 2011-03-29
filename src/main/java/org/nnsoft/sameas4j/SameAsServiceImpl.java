@@ -1,4 +1,4 @@
-package org.sameas.sameas4j;
+package org.nnsoft.sameas4j;
 
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -17,7 +17,7 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonParseException;
 
 /**
- * Default implementation of {@link org.sameas.sameas4j.SameAsService}.
+ * Default implementation of {@link org.nnsoft.sameas4j.SameAsService}.
  *
  * @author Davide Palmisano (dpalmisano@gmail.com)
  * @version $Id$
@@ -45,7 +45,7 @@ final class SameAsServiceImpl implements SameAsService {
     private Cache cache;
 
     /**
-     * Creates a new {@link org.sameas.sameas4j.SameAsService} instance.
+     * Creates a new {@link org.nnsoft.sameas4j.SameAsService} instance.
      */
     public SameAsServiceImpl() {
         this.gsonBuilder.registerTypeAdapter(Equivalence.class, new EquivalenceDeserializer());

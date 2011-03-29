@@ -1,4 +1,4 @@
-package org.sameas.sameas4j;
+package org.nnsoft.sameas4j;
 
 import java.net.URI;
 
@@ -24,7 +24,7 @@ public interface SameAsService {
     Equivalence getDuplicates(URI uri) throws SameAsServiceException;
 
     /**
-     * It returns a list of {@link org.sameas.sameas4j.Equivalence} objects
+     * It returns a list of {@link org.nnsoft.sameas4j.Equivalence} objects
      * identifying equivalent <code>URI<code> for every possible co-reference
      * match.
      *
