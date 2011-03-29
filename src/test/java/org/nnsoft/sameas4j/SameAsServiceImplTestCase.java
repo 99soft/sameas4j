@@ -8,13 +8,10 @@ import java.net.URI;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.sameas.sameas4j.bootstrap.SameAsServiceBuilder;
+import org.nnsoft.sameas4j.bootstrap.SameAsServiceBuilder;
 
 /**
  * Reference test class for {@link org.nnsoft.sameas4j.SameAsServiceImpl}.
- *
- * @author Davide Palmisano (dpalmisano@gmail.com)
- * @version $Id$
  */
 public final class SameAsServiceImplTestCase {
 
