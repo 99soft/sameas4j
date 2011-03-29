@@ -140,9 +140,9 @@ final class SameAsServiceImpl implements SameAsService {
 
             return response;
         } catch (IOException e) {
-            throw new SameAsServiceException("An error occurred while invoking the URL '"
-                    + toBeInvoked
-                    + "'");
+            throw new SameAsServiceException(format("An error occurred while invoking the URL '%s': %s",
+                    toBeInvoked,
+                    e.getMessage()));
         } catch (JsonParseException e) {
             throw new SameAsServiceException("An error occurred while parsing the JSON response", e);
         } finally {
