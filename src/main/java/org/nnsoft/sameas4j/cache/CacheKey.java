@@ -21,15 +21,29 @@
  */
 package org.nnsoft.sameas4j.cache;
 
+import static java.lang.String.format;
+
 /**
- * 
+ * The {@link Cache} key representation.
  */
 public final class CacheKey {
 
+    /**
+     * The sameas service.
+     */
     private final String service;
 
+    /**
+     * The sameas service "Last-modified" header.
+     */
     private final long lastModified;
 
+    /**
+     * Creates a new {@code Cache} key instance.
+     *
+     * @param service The sameas service
+     * @param lastModified The sameas service "Last-modified" header
+     */
     public CacheKey(String service, long lastModified) {
         if (service == null) {
             throw new IllegalArgumentException("Parameter 'service' must not be null");
@@ -39,14 +53,27 @@ public final class CacheKey {
         this.lastModified = lastModified;
     }
 
+    /**
+     * Returns the sameas service.
+     *
+     * @return The sameas service
+     */
     public String getService() {
         return this.service;
     }
 
+    /**
+     * Returns the sameas service "Last-modified" header.
+     *
+     * @return The sameas service "Last-modified" header
+     */
     public long getLastModified() {
         return this.lastModified;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public int hashCode() {
         final int prime = 31;
@@ -56,7 +83,10 @@ public final class CacheKey {
         return result;
     }
 
-    @Override
+    /**
+     * {@inheritDoc}
+     */
+     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;
@@ -85,13 +115,12 @@ public final class CacheKey {
         return true;
     }
 
-    @Override
+     /**
+      * {@inheritDoc}
+      */
+     @Override
     public String toString() {
-        return "CacheKey (service="
-                + this.service
-                + ", lastModified="
-                + this.lastModified
-                + ")";
+        return format("CacheKey (service=%s, lastModified=%s)", service, lastModified);
     }
 
 }
