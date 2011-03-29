@@ -65,23 +65,16 @@ public final class InMemoryCache implements Cache {
     /**
      * {@inheritDoc}
      */
-    public <T> T get(CacheKey cacheKey, Class<T> type) {
+    public <T> T get(CacheKey cacheKey) {
         if (cacheKey == null) {
             throw new IllegalArgumentException("Parameter 'cacheKey' must be not null");
-        }
-        if (type == null) {
-            throw new IllegalArgumentException("Parameter 'type' must be not null");
         }
 
         Object cached = this.data.get(cacheKey);
         if (cached != null) {
-            if (!type.isInstance(cached)) {
-                throw new IllegalArgumentException("Cached object for "
-                        + cacheKey
-                        + " is not of type "
-                        + type.getName());
-            }
-            return type.cast(cached);
+            @SuppressWarnings("unchecked")
+            T returned = (T) cached;
+            return returned;
         }
         return null;
     }

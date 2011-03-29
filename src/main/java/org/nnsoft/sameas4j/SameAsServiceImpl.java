@@ -119,7 +119,7 @@ final class SameAsServiceImpl implements SameAsService {
 
             if (this.cache != null) {
                 CacheKey cacheKey = new CacheKey(toBeInvoked, lastModified);
-                T cached = this.cache.get(cacheKey, returnType);
+                T cached = this.cache.get(cacheKey);
                 if (cached != null) {
                     return cached;
                 }
