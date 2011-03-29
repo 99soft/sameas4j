@@ -40,8 +40,9 @@ public interface Cache {
      *
      * @param <T> The stored object type
      * @param cacheKey The cache key
+     * @param cacheValue The stored object
      * @return The stored object if any, null otherwise
      */
-    <T> T get(CacheKey cacheKey);
+    <T> T get(CacheKey cacheKey, Class<T> type);
 
 }

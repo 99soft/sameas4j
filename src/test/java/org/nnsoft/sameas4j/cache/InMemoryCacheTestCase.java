@@ -51,7 +51,7 @@ public final class InMemoryCacheTestCase {
 
     @Test
     public void retrieveNull() {
-        Equivalence nullEquivalence = cache.get(cacheKey);
+        Equivalence nullEquivalence = cache.get(cacheKey, Equivalence.class);
         assertNull(nullEquivalence);
     }
 
@@ -61,7 +61,7 @@ public final class InMemoryCacheTestCase {
 
         cache.put(cacheKey, expected);
 
-        String actual = cache.get(cacheKey);
+        String actual = cache.get(cacheKey, String.class);
         assertSame(expected, actual);
     }
 
