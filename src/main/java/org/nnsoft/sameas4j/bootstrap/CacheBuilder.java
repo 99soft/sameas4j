@@ -1,8 +1,8 @@
-package org.sameas.sameas4j.bootstrap;
+package org.nnsoft.sameas4j.bootstrap;
 
 import org.nnsoft.sameas4j.SameAsService;
-import org.sameas.sameas4j.cache.Cache;
-import org.sameas.sameas4j.cache.InMemoryCache;
+import org.nnsoft.sameas4j.cache.Cache;
+import org.nnsoft.sameas4j.cache.InMemoryCache;
 
 /**
  * 

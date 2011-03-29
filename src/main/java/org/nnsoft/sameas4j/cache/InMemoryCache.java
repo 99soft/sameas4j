@@ -1,4 +1,4 @@
-package org.sameas.sameas4j.cache;
+package org.nnsoft.sameas4j.cache;
 
 import java.util.LinkedHashMap;
 import java.util.Map;

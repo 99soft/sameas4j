@@ -1,4 +1,4 @@
-package org.sameas.sameas4j.bootstrap;
+package org.nnsoft.sameas4j.bootstrap;
 
 import org.nnsoft.sameas4j.DefaultSameAsServiceFactory;
 import org.nnsoft.sameas4j.SameAsService;

@@ -9,8 +9,8 @@ import java.net.URI;
 import java.net.URL;
 import java.net.URLConnection;
 
-import org.sameas.sameas4j.cache.Cache;
-import org.sameas.sameas4j.cache.CacheKey;
+import org.nnsoft.sameas4j.cache.Cache;
+import org.nnsoft.sameas4j.cache.CacheKey;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;

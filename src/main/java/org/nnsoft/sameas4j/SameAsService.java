@@ -2,7 +2,7 @@ package org.nnsoft.sameas4j;
 
 import java.net.URI;
 
-import org.sameas.sameas4j.cache.Cache;
+import org.nnsoft.sameas4j.cache.Cache;
 
 /**
  * It models the methods that a <a href="http://sameas.org">sameas.org</a>
