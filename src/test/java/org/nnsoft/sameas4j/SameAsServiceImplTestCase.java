@@ -49,11 +49,11 @@ public final class SameAsServiceImplTestCase {
     }
 
     @Test
-    public void fetDuplicatesFromURI() throws SameAsServiceException {
+    public void fetchDuplicatesFromURI() throws SameAsServiceException {
         Equivalence equivalence = this.service
                 .getDuplicates(URI.create("http://www.bbc.co.uk/music/artists/e9dfc148-d5f6-425e-b80b-f99ed2bd7c09"));
         assertNotNull(equivalence);
-        assertEquals(10, equivalence.getAmount());
+        assertEquals(11, equivalence.getAmount());
     }
 
     @Test
