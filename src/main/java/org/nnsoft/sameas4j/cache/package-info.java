@@ -21,6 +21,6 @@
  */
 
 /**
- * 
+ * Simple cache APIs to store sameas.org results.
  */
 package org.nnsoft.sameas4j.cache;
