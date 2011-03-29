@@ -1,14 +1,14 @@
 package org.nnsoft.sameas4j;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+
 import java.net.URI;
 
-import org.nnsoft.sameas4j.Equivalence;
-import org.nnsoft.sameas4j.EquivalenceList;
-import org.nnsoft.sameas4j.SameAsService;
-import org.nnsoft.sameas4j.SameAsServiceException;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 import org.sameas.sameas4j.bootstrap.SameAsServiceBuilder;
-
-import junit.framework.TestCase;
 
 /**
  * Reference test class for {@link org.nnsoft.sameas4j.SameAsServiceImpl}.
@@ -16,28 +16,30 @@ import junit.framework.TestCase;
  * @author Davide Palmisano (dpalmisano@gmail.com)
  * @version $Id$
  */
-public final class SameAsServiceImplTestCase extends TestCase {
+public final class SameAsServiceImplTestCase {
 
     private SameAsService service = null;
 
-    @Override
-    protected void setUp() throws Exception {
+    @Before
+    public void setUp() throws Exception {
         this.service = new SameAsServiceBuilder().createNew().usingDefaultInMemoryCache();
     }
 
-    @Override
-    protected void tearDown() throws Exception {
+    @After
+    public void tearDown() throws Exception {
         this.service = null;
     }
 
-    public void testGetDuplicatesFromURI() throws SameAsServiceException {
+    @Test
+    public void fetDuplicatesFromURI() throws SameAsServiceException {
         Equivalence equivalence = this.service
                 .getDuplicates(URI.create("http://www.bbc.co.uk/music/artists/e9dfc148-d5f6-425e-b80b-f99ed2bd7c09"));
         assertNotNull(equivalence);
         assertEquals(10, equivalence.getAmount());
     }
 
-    public void testGetDuplicatesFromKeyword() throws SameAsServiceException {
+    @Test
+    public void getDuplicatesFromKeyword() throws SameAsServiceException {
         EquivalenceList equivalences = this.service.getDuplicates("Rome");
         assertEquals(10, equivalences.size());
     }
