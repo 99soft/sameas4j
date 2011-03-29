@@ -22,12 +22,27 @@
 package org.nnsoft.sameas4j.cache;
 
 /**
- * 
+ * Simple cache interface for sameas service.
  */
 public interface Cache {
 
+    /**
+     * Add a new entry in the cache.
+     *
+     * @param <T> The stored object type
+     * @param cacheKey The cache key
+     * @param cacheValue The stored object
+     */
     <T> void put(CacheKey cacheKey, T cacheValue);
 
+    /**
+     * Retrieves an object from the cache.
+     *
+     * @param <T> The stored object type
+     * @param cacheKey The cache key
+     * @param cacheValue The stored object
+     * @return The stored object if any, null otherwise
+     */
     <T> T get(CacheKey cacheKey, Class<T> type);
 
 }
