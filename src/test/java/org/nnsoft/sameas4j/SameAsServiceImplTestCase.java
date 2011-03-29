@@ -29,7 +29,6 @@ import java.net.URI;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.nnsoft.sameas4j.cache.InMemoryCache;
 
 /**
  * Reference test class for {@link org.nnsoft.sameas4j.SameAsServiceImpl}.
@@ -41,7 +40,6 @@ public final class SameAsServiceImplTestCase {
     @Before
     public void setUp() throws Exception {
         this.service = DefaultSameAsServiceFactory.createNew();
-        this.service.setCache(new InMemoryCache());
     }
 
     @After
