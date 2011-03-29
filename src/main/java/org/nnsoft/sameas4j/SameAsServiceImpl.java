@@ -82,14 +82,14 @@ final class SameAsServiceImpl implements SameAsService {
      * {@inheritDoc}
      */
     public Equivalence getDuplicates(URI uri) throws SameAsServiceException {
-        return invokeULR(format(SERVICE_URL, uri), Equivalence.class);
+        return invokeURL(format(SERVICE_URL, uri), Equivalence.class);
     }
 
     /**
      * {@inheritDoc}
      */
     public EquivalenceList getDuplicates(String keyword) throws SameAsServiceException {
-        return invokeULR(format(SERVICE_KEYWORD, keyword), EquivalenceList.class);
+        return invokeURL(format(SERVICE_KEYWORD, keyword), EquivalenceList.class);
     }
 
     /**
@@ -101,7 +101,7 @@ final class SameAsServiceImpl implements SameAsService {
      * @return the bound object.
      * @throws SameAsServiceException is any error occurs.
      */
-    private <T> T invokeULR(String toBeInvoked, Class<T> returnType) throws SameAsServiceException {
+    private <T> T invokeURL(String toBeInvoked, Class<T> returnType) throws SameAsServiceException {
         URL url;
         try {
             url = new URL(toBeInvoked);
