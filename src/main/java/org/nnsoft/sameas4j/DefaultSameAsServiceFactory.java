@@ -44,7 +44,6 @@ public final class DefaultSameAsServiceFactory {
      * Creates a new {@link SameAsService} instance.
      *
      * @return a new {@link SameAsService} instance.
-     * @since 1.1
      */
     public static SameAsService createNew() {
         return new SameAsServiceImpl();
@@ -54,29 +53,9 @@ public final class DefaultSameAsServiceFactory {
      * Returns the singleton {@link SameAsService} instance.
      *
      * @return the singleton {@link SameAsService} instance.
-     * @since 1.1
      */
     public static SameAsService getSingletonInstance() {
         return INSTANCE;
-    }
-
-    /**
-     * Creates a new {@link SameAsService} instance.
-     *
-     * @param clazz the {@link SameAsService} has to be instantiated.
-     * @return a new {@link SameAsService} instance.
-     * @deprecated
-     */
-    @Deprecated
-    public static SameAsService getService(Class<? extends SameAsService> clazz) {
-        if(clazz.equals(SameAsService.class))
-            return new SameAsServiceImpl();
-        throw new IllegalArgumentException(
-                String.format(
-                        "Class %s cannot be instantiated as a valid SameAsService implementation",
-                        clazz.getName()
-                )
-        );
     }
 
 }
