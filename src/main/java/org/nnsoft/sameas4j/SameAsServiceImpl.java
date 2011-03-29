@@ -58,7 +58,7 @@ final class SameAsServiceImpl implements SameAsService {
     private final GsonBuilder gsonBuilder = new GsonBuilder();
 
     /**
-     * 
+     * The {@code Cache} reference, can be null.
      */
     private Cache cache;
 
