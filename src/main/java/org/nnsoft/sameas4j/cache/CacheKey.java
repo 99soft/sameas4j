@@ -23,10 +23,17 @@ package org.nnsoft.sameas4j.cache;
 
 import static java.lang.String.format;
 
+import java.io.Serializable;
+
 /**
  * The {@link Cache} key representation.
  */
-public final class CacheKey {
+public final class CacheKey implements Serializable {
+
+    /**
+     * The serialVersionUID constant.
+     */
+    private static final long serialVersionUID = 634054729365372230L;
 
     /**
      * The sameas service.
