@@ -55,7 +55,6 @@ public final class Equivalence implements Iterable<URI> {
     /**
      * {@inheritDoc}
      */
-    @Override
     public Iterator<URI> iterator() {
         return this.duplicates.iterator();
     }

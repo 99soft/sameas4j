@@ -28,7 +28,6 @@ public final class EquivalenceList implements Iterable<Equivalence> {
     /**
      * {@inheritDoc}
      */
-    @Override
     public Iterator<Equivalence> iterator() {
         return equivalenceList.iterator();
     }
