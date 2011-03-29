@@ -24,7 +24,7 @@ Before coding
 <dependencies>
     ...
     <dependency>
-        <groupId>org.sameas</groupId>
+        <groupId>org.99soft</groupId>
         <artifactId>sameas4j</artifactId>
         <version>XX.XX</version>
     </dependency>
@@ -40,7 +40,7 @@ Before coding
     <dependencies>
         ...
         <dependency>
-            <groupId>org.sameas</groupId>
+            <groupId>org.99soft</groupId>
             <artifactId>sameas4j</artifactId>
             <version>XX.XX</version>
         </dependency>

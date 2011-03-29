@@ -7,11 +7,11 @@
 
 Using sameas4j
 
-  The <<<org.sameas.sameas4j.SameAsService>>> client is the core application
+  The <<<org.nnsoft.sameas4j.SameAsService>>> client is the core application
   class; to obtain an instance, just use the factory:
 
 +--------------------------------------+
-import org.sameas.sameas4j.*;
+import org.nnsoft.sameas4j.*;
 
 SameAsService sameAsService = DefaultSameAsServiceFactory.createNew();
 +--------------------------------------+
@@ -19,7 +19,7 @@ SameAsService sameAsService = DefaultSameAsServiceFactory.createNew();
   alternatively, users can access to a singleton instance
 
 +--------------------------------------+
-import org.sameas.sameas4j.*;
+import org.nnsoft.sameas4j.*;
 
 SameAsService sameAsService = DefaultSameAsServiceFactory.getSingletonInstance();
 +--------------------------------------+
@@ -27,7 +27,7 @@ SameAsService sameAsService = DefaultSameAsServiceFactory.getSingletonInstance()
   and then call it to retrieve equivalent URIs for a Linked Data resource:
 
 +--------------------------------------+
-import org.sameas.sameas4j.*;
+import org.nnsoft.sameas4j.*;
 
 Equivalence equivalence = sameAsService
                 .getDuplicates(new URI("http://dbpedia.org/resource/Mogwai"));
@@ -42,7 +42,7 @@ for (URI uri : equivalence) {
   {{{http://sameas.org/about.php}co-referenced}} lookup using a keyword:
 
 +--------------------------------------+
-import org.sameas.sameas4j.*;
+import org.nnsoft.sameas4j.*;
 
 EquivalenceList equivalence = sameAsService
                 .getDuplicates("Rome");
@@ -50,4 +50,3 @@ for (Equivalence equivalence : equivalences) {
     System.out.println(equivalence.getUri());
 }
 +--------------------------------------+
-
