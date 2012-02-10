@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>Introduction</title>
+    <title>Using sameas4j</title>
     <link rel="stylesheet" href="./css/apache-maven-fluido.min.css" />
     <link rel="stylesheet" href="./css/site.css" />
     <link rel="stylesheet" href="./css/print.css" media="print" />
@@ -68,11 +68,11 @@
                                    <h5>99soft :: sameas4j</h5>
                   <ul>
                   <li class="none">
-            <strong>Introduction</strong>
-          </li>
-                  <li class="none">
-                          <a href="howto.html" title="Using sameas4j">Using sameas4j</a>
+                          <a href="index.html" title="Introduction">Introduction</a>
             </li>
+                  <li class="none">
+            <strong>Using sameas4j</strong>
+          </li>
                   <li class="none">
                           <a href="cache.html" title="Cache">Cache</a>
             </li>
@@ -85,47 +85,9 @@
           </ul>
                        <h5>Project Documentation</h5>
                   <ul>
-                                                                                                                                                                                                                                                                                    <li class="expanded">
+                                                                                                                                                                                                                                                                          <li class="collapsed">
                           <a href="project-info.html" title="Project Information">Project Information</a>
-                    <ul>
-                      <li class="none">
-                          <a href="distribution-management.html" title="Distribution Management">Distribution Management</a>
-            </li>
-                      <li class="none">
-            <strong>About</strong>
-          </li>
-                      <li class="none">
-                          <a href="dependencies.html" title="Dependencies">Dependencies</a>
-            </li>
-                      <li class="none">
-                          <a href="issue-tracking.html" title="Issue Tracking">Issue Tracking</a>
-            </li>
-                      <li class="none">
-                          <a href="plugins.html" title="Project Plugins">Project Plugins</a>
-            </li>
-                      <li class="none">
-                          <a href="integration.html" title="Continuous Integration">Continuous Integration</a>
-            </li>
-                      <li class="none">
-                          <a href="license.html" title="Project License">Project License</a>
-            </li>
-                      <li class="none">
-                          <a href="mail-lists.html" title="Mailing Lists">Mailing Lists</a>
-            </li>
-                      <li class="none">
-                          <a href="team-list.html" title="Project Team">Project Team</a>
-            </li>
-                      <li class="none">
-                          <a href="source-repository.html" title="Source Repository">Source Repository</a>
-            </li>
-                      <li class="none">
-                          <a href="plugin-management.html" title="Plugin Management">Plugin Management</a>
-            </li>
-                      <li class="none">
-                          <a href="project-summary.html" title="Project Summary">Project Summary</a>
-            </li>
-              </ul>
-        </li>
+                  </li>
                                                                                                                                                                                                                     <li class="collapsed">
                           <a href="project-reports.html" title="Project Reports">Project Reports</a>
                   </li>
@@ -175,25 +137,25 @@
       <div id="bodyColumn" class="content">
         <div id="contentBox">
                               
-          <div class="section"><h2>Introduction<a name="Introduction"></a></h2><p>The Web of Data has many equivalent URIs. <a class="externalLink" href="http://sameas.org">sameas.org</a> is a service helps you to find co-references between different data sets.</p><p>SameAs4J is a tiny and lightweight library that allows you to integrate the <a class="externalLink" href="http://sameas.org">sameas.org</a> service in your <i>Semantic Web</i> Java applications.</p></div><div class="section"><h2>Before coding<a name="Before_coding"></a></h2><p><i>sameas4j</i> is deployed on Maven Central repository, so users have just to add the <i>sameas4j</i> dependency in their <tt>pom.xml</tt>:</p><div class="source"><pre class="prettyprint">&lt;dependencies&gt;
-    ...
-    &lt;dependency&gt;
-        &lt;groupId&gt;org.99soft&lt;/groupId&gt;
-        &lt;artifactId&gt;sameas4j&lt;/artifactId&gt;
-        &lt;version&gt;XX.XX&lt;/version&gt;
-    &lt;/dependency&gt;
-    ...
-&lt;/dependencies&gt;</pre></div><p>alternatively, users can add <i>sameas4j</i> dependency in the <i>dependencyManagement</i> block:</p><div class="source"><pre class="prettyprint">&lt;dependencyManagement&gt;
-    &lt;dependencies&gt;
-        ...
-        &lt;dependency&gt;
-            &lt;groupId&gt;org.99soft&lt;/groupId&gt;
-            &lt;artifactId&gt;sameas4j&lt;/artifactId&gt;
-            &lt;version&gt;XX.XX&lt;/version&gt;
-        &lt;/dependency&gt;
-        ...
-    &lt;/dependencies&gt;
-&lt;/dependencyManagement&gt;</pre></div><p>Users are now ready to have fun with it!!!</p></div>
+          <div class="section"><h2>Using sameas4j<a name="Using_sameas4j"></a></h2><p>The <tt>org.nnsoft.sameas4j.SameAsService</tt> client is the core application class; to obtain an instance, just use the factory:</p><div class="source"><pre class="prettyprint">import org.nnsoft.sameas4j.*;
+
+SameAsService sameAsService = DefaultSameAsServiceFactory.createNew();</pre></div><p>alternatively, users can access to a singleton instance</p><div class="source"><pre class="prettyprint">import org.nnsoft.sameas4j.*;
+
+SameAsService sameAsService = DefaultSameAsServiceFactory.getSingletonInstance();</pre></div><p>and then call it to retrieve equivalent URIs for a Linked Data resource:</p><div class="source"><pre class="prettyprint">import org.nnsoft.sameas4j.*;
+
+Equivalence equivalence = sameAsService
+                .getDuplicates(new URI(&quot;http://dbpedia.org/resource/Mogwai&quot;));
+System.out.println(&quot;Number of equivalent URIs: &quot;
+        + equivalence.getAmount());
+for (URI uri : equivalence) {
+    System.out.println(&quot;Equivalent URI: &quot; + uri);
+}</pre></div><p>If you don't have an exact URI for your resource you could use the <a class="externalLink" href="http://sameas.org/about.php">co-referenced</a> lookup using a keyword:</p><div class="source"><pre class="prettyprint">import org.nnsoft.sameas4j.*;
+
+EquivalenceList equivalence = sameAsService
+                .getDuplicates(&quot;Rome&quot;);
+for (Equivalence equivalence : equivalences) {
+    System.out.println(equivalence.getUri());
+}</pre></div></div>
                   </div>
       </div>
     </div>

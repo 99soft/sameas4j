@@ -1,0 +1,368 @@
+<api>
+<package name="org.nnsoft.sameas4j"
+>
+<class name="DefaultSameAsServiceFactory"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="createNew"
+ return="org.nnsoft.sameas4j.SameAsService"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getSingletonInstance"
+ return="org.nnsoft.sameas4j.SameAsService"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="Equivalence"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="Equivalence"
+ type="org.nnsoft.sameas4j.Equivalence"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="uri" type="java.net.URI">
+</parameter>
+</constructor>
+<method name="addDuplicate"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="uri" type="java.net.URI">
+</parameter>
+</method>
+<method name="getAmount"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getUri"
+ return="java.net.URI"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="iterator"
+ return="java.util.Iterator&lt;java.net.URI&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="EquivalenceList"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="EquivalenceList"
+ type="org.nnsoft.sameas4j.EquivalenceList"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="addEquivalence"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="equivalence" type="org.nnsoft.sameas4j.Equivalence">
+</parameter>
+</method>
+<method name="iterator"
+ return="java.util.Iterator&lt;org.nnsoft.sameas4j.Equivalence&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="size"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<interface name="SameAsService"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="getDuplicates"
+ return="org.nnsoft.sameas4j.EquivalenceList"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="keyword" type="java.lang.String">
+</parameter>
+<exception name="SameAsServiceException" type="org.nnsoft.sameas4j.SameAsServiceException">
+</exception>
+</method>
+<method name="getDuplicates"
+ return="org.nnsoft.sameas4j.Equivalence"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="uri" type="java.net.URI">
+</parameter>
+<exception name="SameAsServiceException" type="org.nnsoft.sameas4j.SameAsServiceException">
+</exception>
+</method>
+<method name="setCache"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="cache" type="org.nnsoft.sameas4j.cache.Cache">
+</parameter>
+</method>
+</interface>
+<class name="SameAsServiceException"
+ extends="java.lang.Exception"
+ abstract="false"
+ static="false"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="SameAsServiceException"
+ type="org.nnsoft.sameas4j.SameAsServiceException"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="message" type="java.lang.String">
+</parameter>
+</constructor>
+<constructor name="SameAsServiceException"
+ type="org.nnsoft.sameas4j.SameAsServiceException"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="message" type="java.lang.String">
+</parameter>
+<parameter name="e" type="java.lang.Exception">
+</parameter>
+</constructor>
+</class>
+</package>
+<package name="org.nnsoft.sameas4j.cache"
+>
+<interface name="Cache"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="get"
+ return="T"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="cacheKey" type="org.nnsoft.sameas4j.cache.CacheKey">
+</parameter>
+<parameter name="type" type="java.lang.Class&lt;T&gt;">
+</parameter>
+</method>
+<method name="put"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="cacheKey" type="org.nnsoft.sameas4j.cache.CacheKey">
+</parameter>
+<parameter name="cacheValue" type="T">
+</parameter>
+</method>
+</interface>
+<class name="CacheKey"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="CacheKey"
+ type="org.nnsoft.sameas4j.cache.CacheKey"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="service" type="java.lang.String">
+</parameter>
+<parameter name="lastModified" type="long">
+</parameter>
+</constructor>
+<method name="getLastModified"
+ return="long"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getService"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="InMemoryCache"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<implements name="org.nnsoft.sameas4j.cache.Cache">
+</implements>
+<constructor name="InMemoryCache"
+ type="org.nnsoft.sameas4j.cache.InMemoryCache"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="get"
+ return="T"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="cacheKey" type="org.nnsoft.sameas4j.cache.CacheKey">
+</parameter>
+<parameter name="type" type="java.lang.Class&lt;T&gt;">
+</parameter>
+</method>
+<method name="put"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="cacheKey" type="org.nnsoft.sameas4j.cache.CacheKey">
+</parameter>
+<parameter name="cacheValue" type="T">
+</parameter>
+</method>
+</class>
+</package>
+</api>

@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>Introduction</title>
+    <title>Cache</title>
     <link rel="stylesheet" href="./css/apache-maven-fluido.min.css" />
     <link rel="stylesheet" href="./css/site.css" />
     <link rel="stylesheet" href="./css/print.css" media="print" />
@@ -68,14 +68,14 @@
                                    <h5>99soft :: sameas4j</h5>
                   <ul>
                   <li class="none">
-            <strong>Introduction</strong>
-          </li>
+                          <a href="index.html" title="Introduction">Introduction</a>
+            </li>
                   <li class="none">
                           <a href="howto.html" title="Using sameas4j">Using sameas4j</a>
             </li>
                   <li class="none">
-                          <a href="cache.html" title="Cache">Cache</a>
-            </li>
+            <strong>Cache</strong>
+          </li>
           </ul>
                                  <h5>External Links</h5>
                   <ul>
@@ -85,47 +85,9 @@
           </ul>
                        <h5>Project Documentation</h5>
                   <ul>
-                                                                                                                                                                                                                                                                                    <li class="expanded">
+                                                                                                                                                                                                                                                                          <li class="collapsed">
                           <a href="project-info.html" title="Project Information">Project Information</a>
-                    <ul>
-                      <li class="none">
-                          <a href="distribution-management.html" title="Distribution Management">Distribution Management</a>
-            </li>
-                      <li class="none">
-            <strong>About</strong>
-          </li>
-                      <li class="none">
-                          <a href="dependencies.html" title="Dependencies">Dependencies</a>
-            </li>
-                      <li class="none">
-                          <a href="issue-tracking.html" title="Issue Tracking">Issue Tracking</a>
-            </li>
-                      <li class="none">
-                          <a href="plugins.html" title="Project Plugins">Project Plugins</a>
-            </li>
-                      <li class="none">
-                          <a href="integration.html" title="Continuous Integration">Continuous Integration</a>
-            </li>
-                      <li class="none">
-                          <a href="license.html" title="Project License">Project License</a>
-            </li>
-                      <li class="none">
-                          <a href="mail-lists.html" title="Mailing Lists">Mailing Lists</a>
-            </li>
-                      <li class="none">
-                          <a href="team-list.html" title="Project Team">Project Team</a>
-            </li>
-                      <li class="none">
-                          <a href="source-repository.html" title="Source Repository">Source Repository</a>
-            </li>
-                      <li class="none">
-                          <a href="plugin-management.html" title="Plugin Management">Plugin Management</a>
-            </li>
-                      <li class="none">
-                          <a href="project-summary.html" title="Project Summary">Project Summary</a>
-            </li>
-              </ul>
-        </li>
+                  </li>
                                                                                                                                                                                                                     <li class="collapsed">
                           <a href="project-reports.html" title="Project Reports">Project Reports</a>
                   </li>
@@ -175,25 +137,8 @@
       <div id="bodyColumn" class="content">
         <div id="contentBox">
                               
-          <div class="section"><h2>Introduction<a name="Introduction"></a></h2><p>The Web of Data has many equivalent URIs. <a class="externalLink" href="http://sameas.org">sameas.org</a> is a service helps you to find co-references between different data sets.</p><p>SameAs4J is a tiny and lightweight library that allows you to integrate the <a class="externalLink" href="http://sameas.org">sameas.org</a> service in your <i>Semantic Web</i> Java applications.</p></div><div class="section"><h2>Before coding<a name="Before_coding"></a></h2><p><i>sameas4j</i> is deployed on Maven Central repository, so users have just to add the <i>sameas4j</i> dependency in their <tt>pom.xml</tt>:</p><div class="source"><pre class="prettyprint">&lt;dependencies&gt;
-    ...
-    &lt;dependency&gt;
-        &lt;groupId&gt;org.99soft&lt;/groupId&gt;
-        &lt;artifactId&gt;sameas4j&lt;/artifactId&gt;
-        &lt;version&gt;XX.XX&lt;/version&gt;
-    &lt;/dependency&gt;
-    ...
-&lt;/dependencies&gt;</pre></div><p>alternatively, users can add <i>sameas4j</i> dependency in the <i>dependencyManagement</i> block:</p><div class="source"><pre class="prettyprint">&lt;dependencyManagement&gt;
-    &lt;dependencies&gt;
-        ...
-        &lt;dependency&gt;
-            &lt;groupId&gt;org.99soft&lt;/groupId&gt;
-            &lt;artifactId&gt;sameas4j&lt;/artifactId&gt;
-            &lt;version&gt;XX.XX&lt;/version&gt;
-        &lt;/dependency&gt;
-        ...
-    &lt;/dependencies&gt;
-&lt;/dependencyManagement&gt;</pre></div><p>Users are now ready to have fun with it!!!</p></div>
+          <div class="section"><h2>Introduction<a name="Introduction"></a></h2><p>Retrieving and parsing data from <i>sameas.org</i> could require more time than expected, so a cache could be helpful to avoid parsing already required URLs and speedup service operations.</p></div><div class="section"><h2>The Cache interface<a name="The_Cache_interface"></a></h2><p>The <tt>org.nnsoft.sameas4j.cache.Cache</tt> interface describes the easiest way to store and retrieve objects, given a <tt>org.nnsoft.sameas4j.cache.CacheKey</tt> instance.</p><p>The <i>sameas4j</i> package comes with an easy in-memory based implementation class that simply stores and retrieve objects from a memory based LRU cache.</p></div><div class="section"><h2>Plugging the Cache into SameAsService<a name="Plugging_the_Cache_into_SameAsService"></a></h2><p>Very easy! Once obtained the <tt>org.nnsoft.sameas4j.SameAsService</tt> instance, just set the <tt>org.nnsoft.sameas4j.cache.Cache</tt> instance:</p><div class="source"><pre class="prettyprint">SameAsService service = DefaultSameAsServiceFactory.createNew();
+service.setCache(new InMemoryCache());</pre></div></div>
                   </div>
       </div>
     </div>
