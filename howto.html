@@ -137,24 +137,26 @@
       <div id="bodyColumn" class="content">
         <div id="contentBox">
                               
-          <div class="section"><h2>Using sameas4j<a name="Using_sameas4j"></a></h2><p>The <tt>org.nnsoft.sameas4j.SameAsService</tt> client is the core application class; to obtain an instance, just use the factory:</p><div class="source"><pre class="prettyprint">import org.nnsoft.sameas4j.*;
+          <!--  --><!-- Copyright 2010-2012 The 99 Software Foundation --><!--  --><!-- Licensed under the Apache License, Version 2.0 (the "License"); --><!-- you may not use this file except in compliance with the License. --><!-- You may obtain a copy of the License at --><!--  --><!-- http://www.apache.org/licenses/LICENSE-2.0 --><!--  --><!-- Unless required by applicable law or agreed to in writing, software --><!-- distributed under the License is distributed on an "AS IS" BASIS, --><!-- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. --><!-- See the License for the specific language governing permissions and --><!-- limitations under the License. --><!--  --><div class="section"><h2>Using sameas4j<a name="Using_sameas4j"></a></h2><p>The <tt>org.nnsoft.sameas4j.SameAsService</tt> client is the core application class; to obtain an instance, just use the factory:</p><div class="source"><pre class="prettyprint">import org.nnsoft.sameas4j.*;
 
 SameAsService sameAsService = DefaultSameAsServiceFactory.createNew();</pre></div><p>alternatively, users can access to a singleton instance</p><div class="source"><pre class="prettyprint">import org.nnsoft.sameas4j.*;
 
 SameAsService sameAsService = DefaultSameAsServiceFactory.getSingletonInstance();</pre></div><p>and then call it to retrieve equivalent URIs for a Linked Data resource:</p><div class="source"><pre class="prettyprint">import org.nnsoft.sameas4j.*;
 
-Equivalence equivalence = sameAsService
-                .getDuplicates(new URI(&quot;http://dbpedia.org/resource/Mogwai&quot;));
-System.out.println(&quot;Number of equivalent URIs: &quot;
-        + equivalence.getAmount());
-for (URI uri : equivalence) {
-    System.out.println(&quot;Equivalent URI: &quot; + uri);
+Equivalence equivalence = sameAsService.getDuplicates( new URI(&quot;http://dbpedia.org/resource/Mogwai&quot;) );
+
+System.out.println( &quot;Number of equivalent URIs: &quot; + equivalence.getAmount() );
+
+for ( URI uri : equivalence )
+{
+    System.out.println(&quot;Equivalent URI: &quot; + uri );
 }</pre></div><p>If you don't have an exact URI for your resource you could use the <a class="externalLink" href="http://sameas.org/about.php">co-referenced</a> lookup using a keyword:</p><div class="source"><pre class="prettyprint">import org.nnsoft.sameas4j.*;
 
-EquivalenceList equivalence = sameAsService
-                .getDuplicates(&quot;Rome&quot;);
-for (Equivalence equivalence : equivalences) {
-    System.out.println(equivalence.getUri());
+EquivalenceList equivalences = sameAsService.getDuplicates( &quot;Rome&quot; );
+
+for ( Equivalence equivalence : equivalences )
+{
+    System.out.println( equivalence.getUri() );
 }</pre></div></div>
                   </div>
       </div>
