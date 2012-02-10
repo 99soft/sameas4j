@@ -61,6 +61,11 @@ final class SameAsServiceImpl implements SameAsService {
     private final GsonBuilder gsonBuilder = new GsonBuilder();
 
     /**
+     * Cache lock.
+     */
+    private final Lock lock = new ReentrantLock();
+
+    /**
      * The {@code Cache} reference, can be null.
      */
     private Cache cache;
@@ -116,8 +121,10 @@ final class SameAsServiceImpl implements SameAsService {
         URLConnection connection = null;
         Reader reader = null;
 
-        Lock lock = new ReentrantLock();
-        lock.lock();
+        if (this.cache != null) {
+            lock.lock();
+        }
+
         try {
             connection = url.openConnection();
             long lastModified = connection.getLastModified();
@@ -151,7 +158,9 @@ final class SameAsServiceImpl implements SameAsService {
         } catch (JsonParseException e) {
             throw new SameAsServiceException("An error occurred while parsing the JSON response", e);
         } finally {
-            lock.unlock();
+            if (this.cache != null) {
+                lock.unlock();
+            }
 
             if (connection != null && connection instanceof HttpURLConnection) {
                 ((HttpURLConnection) connection).disconnect();
