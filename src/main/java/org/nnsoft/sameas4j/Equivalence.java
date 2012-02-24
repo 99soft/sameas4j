@@ -22,6 +22,8 @@
 package org.nnsoft.sameas4j;
 
 import java.net.URI;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
@@ -50,6 +52,15 @@ public final class Equivalence implements Iterable<URI> {
      */
     protected Equivalence(URI uri) {
         this.uri = uri;
+    }
+
+    /**
+     * Creates a new {@code Equivalence} instance by the requested URL.
+     *
+     * @param url the requested URL.
+     */
+    protected Equivalence(URL url) throws URISyntaxException {
+        this.uri = url.toURI();
     }
 
     /**

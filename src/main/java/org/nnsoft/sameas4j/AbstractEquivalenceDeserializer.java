@@ -21,8 +21,8 @@
  */
 package org.nnsoft.sameas4j;
 
-import java.net.URI;
-import java.net.URISyntaxException;
+import java.io.UnsupportedEncodingException;
+import java.net.*;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
@@ -59,15 +59,13 @@ abstract class AbstractEquivalenceDeserializer {
     public Equivalence getEquivalence(JsonElement json) {
         Equivalence equivalence;
         String uriString = json.getAsJsonObject().getAsJsonPrimitive(URI).getAsString();
-
-        String uri = null;
+        URI uri;
         try {
-            uri = uriString.substring(1, uriString.length() - 1);
-            equivalence = new Equivalence(new URI(uri));
+            uri = new URI(uriString);
         } catch (URISyntaxException e) {
-            throw new JsonParseException(String.format(EXCEPTION_MESSAGE, uri));
+            throw new JsonParseException(String.format(EXCEPTION_MESSAGE, uriString));
         }
-
+        equivalence = new Equivalence(uri);
         JsonArray duplicates = json.getAsJsonObject().getAsJsonArray(DUPLICATES);
         for (int i = 0; i < duplicates.size(); i++) {
             try {
@@ -77,7 +75,6 @@ abstract class AbstractEquivalenceDeserializer {
                 continue;
             }
         }
-
         return equivalence;
     }
 
