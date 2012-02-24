@@ -24,22 +24,28 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://maven.apache.org/changes/1.0.0 http://maven.apache.org/plugins/maven-changes-plugin/xsd/changes-1.0.0.xsd">
 
-    <properties>
-        <title>Changes</title>
-    </properties>
+  <properties>
+    <title>Changes</title>
+  </properties>
 
-    <body>
-        <release version="2.0" date="TBD" description="1.0 release">
-            <action dev="simonetripodi" type="update">
-                Project moved to GitHub.
-            </action>
-        </release>
+  <body>
+    <release version="2.0" date="2012-02-24" description="Major release">
+      <action dev="simonetripodi" type="update">
+        Project moved to GitHub.
+      </action>
+      <action dev="dpalmisano" type="update">
+        APIs update.
+      </action>
+      <action dev="simonetripodi" type="update">
+        Added requests cache support.
+      </action>
+    </release>
 
-        <release version="1.0" date="2010-08-25" description="1.0 release">
-            <action dev="dpalmisano" type="update">
-                First release.
-            </action>
-        </release>
-    </body>
+    <release version="1.0" date="2010-08-25" description="1.0 release">
+      <action dev="dpalmisano" type="update">
+        First release.
+      </action>
+    </release>
+  </body>
 
 </document>
