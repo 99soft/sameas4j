@@ -77,6 +77,14 @@ abstract class AbstractEquivalenceDeserializer {
         }
 
         // special URL encoding chars
+        UNRESERVED_CHARS.set('$');
+        UNRESERVED_CHARS.set('&');
+        UNRESERVED_CHARS.set('+');
+        UNRESERVED_CHARS.set(',');
+        UNRESERVED_CHARS.set(';');
+        UNRESERVED_CHARS.set('=');
+        UNRESERVED_CHARS.set('?');
+        UNRESERVED_CHARS.set('@');
         UNRESERVED_CHARS.set('/');
         UNRESERVED_CHARS.set(':');
         UNRESERVED_CHARS.set('-');
