@@ -50,6 +50,18 @@
 <parameter name="uri" type="java.net.URI">
 </parameter>
 </constructor>
+<constructor name="Equivalence"
+ type="org.nnsoft.sameas4j.Equivalence"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="url" type="java.net.URL">
+</parameter>
+<exception name="URISyntaxException" type="java.net.URISyntaxException">
+</exception>
+</constructor>
 <method name="addDuplicate"
  return="void"
  abstract="false"

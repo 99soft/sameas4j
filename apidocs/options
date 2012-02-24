@@ -1,7 +1,7 @@
 -bootclasspath
 '/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/jsfd.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/classes.jar:/System/Library/Frameworks/JavaVM.framework/Frameworks/JavaRuntimeSupport.framework/Resources/Java/JavaRuntimeSupport.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/ui.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/laf.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/sunrsasign.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/jsse.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/jce.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/charsets.jar'
 -classpath
-'/Users/simonetripodi/Documents/workspace/sameas4j/target/classes:/Users/simonetripodi/.m2/repository/com/google/code/gson/gson/1.6/gson-1.6.jar'
+'/Users/simonetripodi/Documents/workspace/sameas4j/target/checkout/target/classes:/Users/simonetripodi/.m2/repository/com/google/code/gson/gson/1.6/gson-1.6.jar'
 -doclet
 'com.google.doclava.Doclava'
 -docletpath
@@ -10,6 +10,6 @@
 'UTF-8'
 -protected
 -sourcepath
-'/Users/simonetripodi/Documents/workspace/sameas4j/src/main/java'
+'/Users/simonetripodi/Documents/workspace/sameas4j/target/checkout/src/main/java'
 -hdf project.name "99soft :: sameas4j"
-            -d /Users/simonetripodi/Documents/workspace/sameas4j/target/site/apidocs
+            -d /Users/simonetripodi/Documents/workspace/sameas4j/target/checkout/target/site/apidocs
