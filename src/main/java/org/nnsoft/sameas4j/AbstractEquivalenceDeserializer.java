@@ -21,8 +21,8 @@
  */
 package org.nnsoft.sameas4j;
 
-import java.io.UnsupportedEncodingException;
-import java.net.*;
+import java.net.URI;
+import java.net.URISyntaxException;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
@@ -52,7 +52,7 @@ abstract class AbstractEquivalenceDeserializer {
     /**
      * Deserialize a single {@link org.nnsoft.sameas4j.Equivalence}
      * from its Json serialization.
-     * 
+     *
      * @param json object to be deserialized
      * @return a not null {@link org.nnsoft.sameas4j.Equivalence} instance
      */
